@@ -3,10 +3,9 @@ import { setPassiveTouchGestures, setRootPath } from "@polymer/polymer/lib/utils
 import "@polymer/app-route/app-location.js";
 import "@polymer/app-route/app-route.js";
 import "@polymer/paper-button/paper-button.js";
+
 import { store } from "./store.js";
 import { updateAccessible } from "./actions/app.js";
-
-import "./todo-item.js";
 
 // Gesture events like tap and track generated from touch will not be
 // preventable, allowing for better scrolling performance.
@@ -26,9 +25,20 @@ class MyApp extends PolymerElement {
 
           display: block;
         }
-        paper-button {
+        .random-btn {
           background-color: darkgreen;
           color: white;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 40%;
+        }
+
+        @media (max-width: 700px) {
+          .random-btn {
+            width: 80%;
+          }
         }
       </style>
 
@@ -36,7 +46,7 @@ class MyApp extends PolymerElement {
 
       <app-route route="{{route}}" pattern="[[rootPath]]:page" data="{{routeData}}" tail="{{subroute}}"> </app-route>
 
-      <paper-button on-click="_generateRandomTodo">Random</paper-button>
+      <paper-button class="random-btn" on-click="_generateRandomTodo">Random</paper-button>
     `;
   }
 
