@@ -8,6 +8,7 @@ import { store } from "./store.js";
 import { updateAccessible } from "./actions/app.js";
 
 import "./startpage-screen.js";
+import "./suggestion-screen.js";
 
 // Gesture events like tap and track generated from touch will not be
 // preventable, allowing for better scrolling performance.
@@ -17,7 +18,10 @@ setPassiveTouchGestures(true);
 // in `index.html`.
 setRootPath(MyAppGlobals.rootPath);
 
-class MyApp extends PolymerElement {
+class Quarantino extends PolymerElement {
+  static get is() {
+    return "quarantino-app";
+  }
   static get template() {
     return html`
       <style>
@@ -34,6 +38,7 @@ class MyApp extends PolymerElement {
       <app-route route="{{route}}" pattern="[[rootPath]]:page" data="{{routeData}}" tail="{{subroute}}"> </app-route>
       <div id="screen" class="screen">
         <startpage-screen id="startpageScreen"></startpage-screen>
+        <suggestion-screen id="suggestionScreen" style="display: none;"> </suggestion-screen>
       </div>
     `;
   }
@@ -45,9 +50,15 @@ class MyApp extends PolymerElement {
   ready() {
     super.ready();
     this.$.startpageScreen.addEventListener("random-btn-clicked", evt => {
-      console.log("btn clicked");
+      this.$.startpageScreen.style.display = "none";
+      this.$.suggestionScreen.style.display = "block";
+    });
+
+    this.$.suggestionScreen.addEventListener("back-clicked", evt => {
+      this.$.startpageScreen.style.display = "block";
+      this.$.suggestionScreen.style.display = "none";
     });
   }
 }
 
-window.customElements.define("my-app", MyApp);
+window.customElements.define(Quarantino.is, Quarantino);
