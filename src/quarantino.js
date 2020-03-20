@@ -9,6 +9,7 @@ import { updateAccessible } from "./actions/app.js";
 
 import "./startpage-screen.js";
 import "./suggestion-screen.js";
+import "./timer-screen.js"
 
 // Gesture events like tap and track generated from touch will not be
 // preventable, allowing for better scrolling performance.
@@ -47,6 +48,7 @@ class Quarantino extends PolymerElement {
       <div id="screen" class="screen">
         <startpage-screen id="startpageScreen"></startpage-screen>
         <suggestion-screen id="suggestionScreen" style="display: none;"> </suggestion-screen>
+        <timer-screen id="timerScreen" style="display: none;"></timer-screen>
       </div>
     `;
   }
@@ -60,11 +62,22 @@ class Quarantino extends PolymerElement {
     this.$.startpageScreen.addEventListener("random-btn-clicked", evt => {
       this.$.startpageScreen.style.display = "none";
       this.$.suggestionScreen.style.display = "block";
+      this.$.timerScreen.style.display = "none";
+
     });
 
     this.$.suggestionScreen.addEventListener("back-clicked", evt => {
       this.$.startpageScreen.style.display = "block";
       this.$.suggestionScreen.style.display = "none";
+      this.$.timerScreen.style.display = "none";
+
+    });
+
+    this.$.suggestionScreen.addEventListener("item-clicked", evt => {
+      console.log(evt.detail);
+      this.$.startpageScreen.style.display = "none";
+      this.$.suggestionScreen.style.display = "none";
+      this.$.timerScreen.style.display = "block";
     });
   }
 }

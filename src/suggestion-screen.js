@@ -36,7 +36,8 @@ class SuggestionScreen extends PolymerElement {
         <dom-repeat items="{{suggestions}}">
           <template>
             <div>
-              <suggestion-element title="[[item.name]]"></suggestion-element>
+              <suggestion-element id="[[item.id]]" title="[[item.name]]" on-click="_dispatchItemClickedEvent"></suggestion-element>
+
             </div>
           </template>
         </dom-repeat>
@@ -65,6 +66,10 @@ class SuggestionScreen extends PolymerElement {
 
   _dispatchBackClickedEvent() {
     this.dispatchEvent(new CustomEvent("back-clicked"));
+  }
+
+  _dispatchItemClickedEvent(evt) {
+    this.dispatchEvent(new CustomEvent("item-clicked", {detail: {id: evt.target.id}}));
   }
 }
 
