@@ -12,9 +12,14 @@ class TimerScreen extends PolymerElement {
           color: white;
         }
       </style>
+      <iron-icon icon="arrow-back" on-click="_dispatchBackClickedEvent"></iron-icon>
 
       Timer [[time]] min.
     `;
+  }
+
+  _dispatchBackClickedEvent() {
+    this.dispatchEvent(new CustomEvent("back-clicked"));
   }
 
   static get properties() {

@@ -65,11 +65,9 @@ class Quarantino extends PolymerElement {
       this.$.timerScreen.style.display = "none";
     });
 
-    this.$.suggestionScreen.addEventListener("back-clicked", evt => {
-      this.$.startpageScreen.style.display = "block";
-      this.$.suggestionScreen.style.display = "none";
-      this.$.timerScreen.style.display = "none";
-    });
+    this.$.suggestionScreen.addEventListener("back-clicked", this._resetToStartPage.bind(this));
+
+    this.$.timerScreen.addEventListener("back-clicked", this._resetToStartPage.bind(this));
 
     this.$.suggestionScreen.addEventListener("item-clicked", evt => {
       this.$.timerScreen.time = evt.detail.time;
@@ -77,6 +75,12 @@ class Quarantino extends PolymerElement {
       this.$.suggestionScreen.style.display = "none";
       this.$.timerScreen.style.display = "block";
     });
+  }
+
+  _resetToStartPage() {
+    this.$.startpageScreen.style.display = "block";
+    this.$.suggestionScreen.style.display = "none";
+    this.$.timerScreen.style.display = "none";
   }
 }
 
