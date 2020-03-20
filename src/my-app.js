@@ -7,6 +7,8 @@ import "@polymer/paper-button/paper-button.js";
 import { store } from "./store.js";
 import { updateAccessible } from "./actions/app.js";
 
+import "./startpage-screen.js";
+
 // Gesture events like tap and track generated from touch will not be
 // preventable, allowing for better scrolling performance.
 setPassiveTouchGestures(true);
@@ -25,28 +27,14 @@ class MyApp extends PolymerElement {
 
           display: block;
         }
-        .random-btn {
-          background-color: darkgreen;
-          color: white;
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          width: 40%;
-        }
-
-        @media (max-width: 700px) {
-          .random-btn {
-            width: 80%;
-          }
-        }
       </style>
 
       <app-location route="{{route}}" url-space-regex="^[[rootPath]]"> </app-location>
 
       <app-route route="{{route}}" pattern="[[rootPath]]:page" data="{{routeData}}" tail="{{subroute}}"> </app-route>
-
-      <paper-button class="random-btn" on-click="_generateRandomTodo">Random</paper-button>
+      <div id="screen" class="screen">
+        <startpage-screen id="startpageScreen"></startpage-screen>
+      </div>
     `;
   }
 
@@ -56,10 +44,9 @@ class MyApp extends PolymerElement {
 
   ready() {
     super.ready();
-  }
-
-  _generateRandomTodo() {
-    alert("I'm a random todo");
+    this.$.startpageScreen.addEventListener("random-btn-clicked", evt => {
+      console.log("btn clicked");
+    });
   }
 }
 
