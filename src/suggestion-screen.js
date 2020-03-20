@@ -24,6 +24,7 @@ class SuggestionScreen extends PolymerElement {
           transform: translate(-50%, -50%);
           width: 80%;
           height: 80%;
+          color: white;
         }
 
         @media (max-width: 700px) {
@@ -32,15 +33,30 @@ class SuggestionScreen extends PolymerElement {
 
       <iron-icon icon="arrow-back" on-click="_dispatchBackClickedEvent"></iron-icon>
       <div class="suggestions-container">
-        <suggestion-element title="Staubsaugen"></suggestion-element>
-        <suggestion-element title="Mittag kochen"></suggestion-element>
-        <suggestion-element title="chillen mit kids"></suggestion-element>
+        <dom-repeat items="{{suggestions}}">
+          <template>
+            <div>
+              <suggestion-element title="[[item.name]]"></suggestion-element>
+            </div>
+          </template>
+        </dom-repeat>
       </div>
     `;
   }
 
   static get properties() {
-    return {};
+    return {
+      suggestions: {
+        type: Object,
+        value() {
+          return [
+            { id: 1, name: "Staubsaugen" },
+            { id: 2, name: "Mittag kochen" },
+            { id: 3, name: "chillen mit kids" }
+          ];
+        }
+      }
+    };
   }
 
   ready() {
