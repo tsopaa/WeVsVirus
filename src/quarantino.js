@@ -31,6 +31,14 @@ class Quarantino extends PolymerElement {
 
           display: block;
         }
+        .screen {
+          background-color: black;
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+        }
       </style>
 
       <app-location route="{{route}}" url-space-regex="^[[rootPath]]"> </app-location>

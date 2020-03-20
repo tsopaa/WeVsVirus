@@ -2,6 +2,8 @@ import { PolymerElement, html } from "@polymer/polymer/polymer-element.js";
 
 import "@polymer/iron-icons/iron-icons.js";
 
+import "./suggestion-element.js";
+
 class SuggestionScreen extends PolymerElement {
   static get is() {
     return "suggestion-screen";
@@ -12,6 +14,9 @@ class SuggestionScreen extends PolymerElement {
         :host {
           display: block;
         }
+        iron-icon {
+          color: white;
+        }
         .suggestions-container {
           position: absolute;
           top: 50%;
@@ -19,7 +24,6 @@ class SuggestionScreen extends PolymerElement {
           transform: translate(-50%, -50%);
           width: 80%;
           height: 80%;
-          background-color: black;
         }
 
         @media (max-width: 700px) {
@@ -27,7 +31,11 @@ class SuggestionScreen extends PolymerElement {
       </style>
 
       <iron-icon icon="arrow-back" on-click="_dispatchBackClickedEvent"></iron-icon>
-      <div class="suggestions-container"></div>
+      <div class="suggestions-container">
+        <suggestion-element title="Staubsaugen"></suggestion-element>
+        <suggestion-element title="Mittag kochen"></suggestion-element>
+        <suggestion-element title="chillen mit kids"></suggestion-element>
+      </div>
     `;
   }
 
