@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes" />
+    <title>app</title>
+    <base href="/" />
+    <script>
+      window.MyAppGlobals = { rootPath: "/" };
+    </script>
+    <!-- Load webcomponents-loader.js to check and load any polyfills your browser needs -->
+    <script src="node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js"></script>
+    <script
+      type="text/javascript"
+      src="node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js"
+    ></script>
+    <!-- Load your application shell -->
+    <script type="module" src="src/my-app.js"></script>
+    <!-- Add any global styles for body, document, etc. -->
+    <style>
+      body {
+        margin: 0;
+        font-family: "Roboto", "Noto", sans-serif;
+        line-height: 1.5;
+        min-height: 100vh;
+        background-color: #fff;
+      }
+    </style>
+  </head>
+
+  <body>
+    <my-app></my-app>
+    <script>
+      // HACK(keanulee): The Redux package assumes `process` exists - mock it here before
+      // the module is loaded.
+      window.process = {
+        env: {
+          NODE_ENV: "production"
+        }
+      };
+    </script>
+    <noscript> Please enable JavaScript to view this website. </noscript>
+  </body>
+</html>
