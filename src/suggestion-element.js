@@ -11,7 +11,7 @@ class SuggestionElement extends PolymerElement {
           display: block;
         }
         .suggestion-container {
-          height: 50px;
+          min-height: 50px;
           border: 1px solid white;
           width: 100%;
           position: relative;
@@ -20,9 +20,10 @@ class SuggestionElement extends PolymerElement {
           font-size: 22px;
           color: white;
           position: absolute;
+          text-align: center;
+          width: 100%;
           top: 50%;
-          transform: translate(-50%, -50%);
-          left: 50%;
+          transform: translateY(-50%);
         }
         @media (max-width: 700px) {
         }
