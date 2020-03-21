@@ -1,15 +1,16 @@
 {
   "entrypoint": "index.html",
   "shell": "src/quarantino.js",
-  "sources": ["src/**.js", "package.json", "res/*"],
+  "sources": ["src/**.js", "package.json", "res/**/*"],
   "extraDependencies": [
     "node_modules/@webcomponents/webcomponentsjs/*.js",
     "!node_modules/@webcomponents/webcomponentsjs/gulpfile.js",
-    "node_modules/@webcomponents/webcomponentsjs/bundles/*.js"
+    "node_modules/@webcomponents/webcomponentsjs/bundles/*.js",
+    "manifest.json"
   ],
   "builds": [
     {
-      "name": "es5-bundled",
+      "name": "es6-bundled",
       "basePath": "/",
       "js": {
         "minify": true,
@@ -23,7 +24,7 @@
         "minify": true
       },
       "bundle": true,
-      "addServiceWorker": false
+      "addServiceWorker": true
     }
   ],
   "moduleResolution": "node",
