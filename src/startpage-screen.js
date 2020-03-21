@@ -62,6 +62,10 @@ class StartpageScreen extends PolymerElement {
           font-size: 0.9em;
           width: 100%;
         }
+        .title,
+        .subtitle {
+          pointer-events: none;
+        }
 
         .checkbox-container {
           position: relative;
