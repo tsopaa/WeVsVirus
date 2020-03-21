@@ -15,6 +15,7 @@ class TimerScreen extends PolymerElement {
       <iron-icon icon="arrow-back" on-click="_dispatchBackClickedEvent"></iron-icon>
 
       Timer [[time]] min.
+      <div id="timer">[[currentTimerTime]]</div>
     `;
   }
 
@@ -26,13 +27,28 @@ class TimerScreen extends PolymerElement {
     return {
       time: {
         type: Number,
-        value: 0
+        value: 0,
+        observer: "_timeChanged"
+      },
+      currentTimerTime: {
+        type: String
       }
     };
   }
 
   ready() {
     super.ready();
+    this.timer = new easytimer.Timer();
+    this.timer.addEventListener("targetAchieved", () => console.log("target achieved"));
+  }
+
+  _timeChanged() {
+    if (this.time > 0) {
+      this.timer.start({ countdown: true, startValues: { minutes: this.time } });
+      this.timer.addEventListener("secondsUpdated", () => {
+        this.set("currentTimerTime", this.timer.getTimeValues().toString());
+      });
+    }
   }
 }
 
