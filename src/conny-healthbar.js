@@ -31,9 +31,11 @@ class ConnyHealthbar extends PolymerElement {
           height: 100%;
         }
         #bar {
-          width: 25%;
+          width: 100%;
           height: 100%;
           background-color: green;
+          transition: width 1s;
+          transition-timing-function: ease;
         }
         .numbers {
           position: absolute;
