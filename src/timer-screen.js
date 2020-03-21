@@ -26,11 +26,6 @@ class TimerScreen extends PolymerElement {
     `;
   }
 
-  _backClicked() {
-    this.timer.stop();
-    this.dispatchEvent(new CustomEvent("back-clicked"));
-  }
-
   static get properties() {
     return {
       time: {
@@ -57,6 +52,11 @@ class TimerScreen extends PolymerElement {
         this.set("currentTimerTime", this.timer.getTimeValues().toString());
       });
     }
+  }
+
+  _backClicked() {
+    this.timer.stop();
+    this.dispatchEvent(new CustomEvent("back-clicked"));
   }
 }
 

@@ -47,14 +47,26 @@ class Quarantino extends PolymerElement {
       <app-route route="{{route}}" pattern="[[rootPath]]:page" data="{{routeData}}" tail="{{subroute}}"> </app-route>
       <div id="screen" class="screen">
         <startpage-screen id="startpageScreen"></startpage-screen>
-        <suggestion-screen id="suggestionScreen" style="display: none;"> </suggestion-screen>
+        <suggestion-screen id="suggestionScreen" suggestions="[[suggestions]]" style="display: none;">
+        </suggestion-screen>
         <timer-screen id="timerScreen" style="display: none;"></timer-screen>
       </div>
     `;
   }
 
   static get properties() {
-    return {};
+    return {
+      suggestions: {
+        type: Object,
+        value() {
+          return [
+            { id: 1, name: "Staubsaugen", time: 1 },
+            { id: 2, name: "Mittag kochen", time: 2 },
+            { id: 3, name: "chillen mit kids", time: 3 }
+          ];
+        }
+      }
+    };
   }
 
   ready() {

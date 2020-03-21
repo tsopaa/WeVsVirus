@@ -51,14 +51,7 @@ class SuggestionScreen extends PolymerElement {
   static get properties() {
     return {
       suggestions: {
-        type: Object,
-        value() {
-          return [
-            { id: 1, name: "Staubsaugen", time: 1 },
-            { id: 2, name: "Mittag kochen", time: 2 },
-            { id: 3, name: "chillen mit kids", time: 3 }
-          ];
-        }
+        type: Object
       }
     };
   }
