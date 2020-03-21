@@ -43,22 +43,38 @@ class ConnyHealthbar extends PolymerElement {
           color: black;
         }
       </style>
-      <img class="conny" src="res/conny.png" />
+      <img id="connyImg" class="conny" src="res/conny.png" />
       <div class="progress-container">
         <div id="progress">
           <div id="bar"></div>
-          <div class="numbers">25/100</div>
+          <div class="numbers">[[health]]/100</div>
         </div>
       </div>
     `;
   }
 
   static get properties() {
-    return {};
+    return {
+      health: {
+        type: Number,
+        observer: "_healthChanged",
+        notify: true
+      }
+    };
   }
 
   ready() {
     super.ready();
+  }
+
+  _healthChanged() {
+    if (this.health <= 0) {
+      this.set("health", 0);
+      this.$.connyImg.src = "res/conny-dead.png";
+    } else {
+      this.$.connyImg.src = "res/conny.png";
+    }
+    this.$.bar.style.width = this.health + "%";
   }
 }
 

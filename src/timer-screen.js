@@ -81,6 +81,10 @@ class TimerScreen extends PolymerElement {
       _paused: {
         type: Boolean,
         value: false
+      },
+      health: {
+        type: Number,
+        notify: true
       }
     };
   }
@@ -88,7 +92,10 @@ class TimerScreen extends PolymerElement {
   ready() {
     super.ready();
     this.timer = new easytimer.Timer();
-    this.timer.addEventListener("targetAchieved", () => console.log("target achieved"));
+    this.timer.addEventListener("targetAchieved", () => {
+      this.set("health", this.health - this.time);
+      //TODO: end screen
+    });
   }
 
   _pause() {
