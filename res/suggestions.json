@@ -109,7 +109,7 @@
             "name": "Sprachen lernen",
             "id" : 16,
             "time" : 15,
-            "categories" : ["Haushalt"]
+            "categories" : ["Entertainment", "Langeweile"]
         },
 
         {
@@ -151,7 +151,7 @@
             "name": "Instagram, Facebook und Co",
             "id" : 22,
             "time" : 25,
-            "categories" : ["Sport", "Entertainment", "Langeweile"]
+            "categories" : ["Entertainment","Sozialleben", "Langeweile"]
         },
 
         {
@@ -236,6 +236,90 @@
             "id" : 34,
             "time" : 30,
             "categories" : ["Kochen"]
+        },
+
+        {
+            "name": "Playlisten aktualisieren",
+            "id" : 35,
+            "time" : 60,
+            "categories" : ["Entertainment", "Langeweile"]
+        },
+
+        {
+            "name": "Wohnung aufräumen",
+            "id" : 36,
+            "time" : 60,
+            "categories" : ["Haushalt"]
+        },
+
+        {
+            "name": "Übersetze deinen Lieblingssong",
+            "id" : 37,
+            "time" : 15,
+            "categories" : ["Langeweile"]
+        },
+
+        {
+            "name": "Malen oder Zeichnen",
+            "id" : 38,
+            "time" : 60,
+            "categories" : ["Entertainment", "Langeweile"]
+        },
+
+        {
+            "name": "Origami falten",
+            "id" : 39,
+            "time" : 30,
+            "categories" : ["Langeweile"]
+        },
+
+        {
+            "name": "Youtube schauen",
+            "id" : 40,
+            "time" : 30,
+            "categories" : ["Entertainment", "Sozialleben", "Langeweile"]
+        },
+
+        {
+            "name": "Ein Sodoku lösen",
+            "id" : 41,
+            "time" : 30,
+            "categories" : ["Langeweile"]
+        },
+
+        {
+            "name": "Kreuzworträtsel lösen",
+            "id" : 42,
+            "time" : 30,
+            "categories" : ["Langeweile"]
+        },
+
+        {
+            "name": "Stadt, Land, Fluss spielen",
+            "id" : 43,
+            "time" : 30,
+            "categories" : ["Langeweile"]
+        },
+
+        {
+            "name": "Klo säubern",
+            "id" : 44,
+            "time" : 15,
+            "categories" : ["Haushalt"]
+        },
+
+        {
+            "name": "20 Sit-Ups und planken",
+            "id" : 45,
+            "time" : 15,
+            "categories" : ["Sport"]
+        },
+
+        {
+            "name": "Filmabend",
+            "id" : 46,
+            "time" : 240,
+            "categories" : ["Entertainment", "Sozialleben", "Familie"]
         }
     ]
 }
