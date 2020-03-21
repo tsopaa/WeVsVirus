@@ -55,7 +55,7 @@ class Quarantino extends PolymerElement {
       <app-route route="{{route}}" pattern="[[rootPath]]:page" data="{{routeData}}" tail="{{subroute}}"> </app-route>
       <div id="screen" class="screen">
         <startpage-screen id="startpageScreen" categories="[[categories]]"></startpage-screen>
-        <suggestion-screen id="suggestionScreen" suggestions="[[suggestions]]" style="display: none;">
+        <suggestion-screen id="suggestionScreen" suggestions="[[filteredSuggestions]]" style="display: none;">
         </suggestion-screen>
         <timer-screen id="timerScreen" style="display: none;"></timer-screen>
       </div>
@@ -68,8 +68,20 @@ class Quarantino extends PolymerElement {
         type: Object,
         observer: "_assignCategories"
       },
+      filteredSuggestions: {
+        type: Object,
+        value() {
+          return [];
+        }
+      },
       catgeories: {
         type: Object
+      },
+      checkedCategories: {
+        type: Object,
+        value() {
+          return [];
+        }
       }
     };
   }
@@ -77,9 +89,20 @@ class Quarantino extends PolymerElement {
   ready() {
     super.ready();
     this.$.startpageScreen.addEventListener("random-btn-clicked", evt => {
-      this.$.startpageScreen.style.display = "none";
-      this.$.suggestionScreen.style.display = "block";
-      this.$.timerScreen.style.display = "none";
+      this._showSuggestions();
+    });
+
+    this.$.startpageScreen.addEventListener("category-checked", evt => {
+      if (!this.checkedCategories.find(el => el === evt.detail.name)) {
+        this.set("checkedCategories", [...this.checkedCategories, evt.detail.name]);
+      }
+    });
+
+    this.$.startpageScreen.addEventListener("category-unchecked", evt => {
+      this.set(
+        "checkedCategories",
+        this.checkedCategories.filter(el => el !== evt.detail.name)
+      );
     });
 
     this.$.suggestionScreen.addEventListener("back-clicked", this._resetToStartPage.bind(this));
@@ -93,6 +116,27 @@ class Quarantino extends PolymerElement {
       this.$.suggestionScreen.style.display = "none";
       this.$.timerScreen.style.display = "block";
     });
+  }
+
+  _showSuggestions() {
+    if (this.checkedCategories.length > 0) {
+      let filteredSuggestions = [];
+      this.checkedCategories.forEach(checkedCategory => {
+        filteredSuggestions = [
+          ...filteredSuggestions,
+          ...this.suggestions.filter(suggestion => suggestion.categories.find(category => category === checkedCategory))
+        ];
+      });
+      this.set(
+        "filteredSuggestions",
+        filteredSuggestions.filter((item, index) => filteredSuggestions.indexOf(item) === index)
+      );
+    } else {
+      this.set("filteredSuggestions", this.suggestions);
+    }
+    this.$.startpageScreen.style.display = "none";
+    this.$.suggestionScreen.style.display = "block";
+    this.$.timerScreen.style.display = "none";
   }
 
   _setSuggestions() {

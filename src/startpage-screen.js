@@ -66,7 +66,9 @@ class StartpageScreen extends PolymerElement {
         <div class="inner-checkbox-container">
           <dom-repeat items="{{categories}}" as="category">
             <template>
-              <paper-checkbox class="checkBox">[[category]]</paper-checkbox>
+              <paper-checkbox id="[[category]]" class="checkBox" on-click="_checkboxClicked"
+                >[[category]]</paper-checkbox
+              >
             </template>
           </dom-repeat>
         </div>
@@ -84,6 +86,14 @@ class StartpageScreen extends PolymerElement {
 
   ready() {
     super.ready();
+  }
+
+  _checkboxClicked(evt) {
+    if (evt.target.checked) {
+      this.dispatchEvent(new CustomEvent("category-checked", { detail: { name: evt.target.id } }));
+    } else if (!evt.target.checked) {
+      this.dispatchEvent(new CustomEvent("category-unchecked", { detail: { name: evt.target.id } }));
+    }
   }
 
   _dispatchRandomBtnClickedEvent() {
