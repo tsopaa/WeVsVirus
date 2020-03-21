@@ -1,7 +1,4 @@
-import {
-  PolymerElement,
-  html
-} from "@polymer/polymer/polymer-element.js";
+import { PolymerElement, html } from "@polymer/polymer/polymer-element.js";
 
 import "@polymer/paper-checkbox/paper-checkbox.js";
 
@@ -10,7 +7,7 @@ class StartpageScreen extends PolymerElement {
     return "startpage-screen";
   }
   static get template() {
-    return html `
+    return html`
       <style>
         :host {
           display: flex;
@@ -40,7 +37,7 @@ class StartpageScreen extends PolymerElement {
           border-radius: 2px;
           padding: 8px 16px;
           --paper-checkbox-checked-color: var(--paper-green-500);
-          --paper-checkbox-checked-ink-color: var(--paper-green-500);
+          --paper-checkbox-checked-ink-color: rgba(0, 0, 0, 0);
           --paper-checkbox-unchecked-color: var(--paper-green-900);
           --paper-checkbox-unchecked-ink-color: var(--paper-green-900);
           --paper-checkbox-label-color: var(--paper-green-700);
@@ -52,7 +49,7 @@ class StartpageScreen extends PolymerElement {
           transform: translateX(-50%);
           margin-bottom: 2px;
         }
-        
+
         paper-checkbox .title {
           color: white;
           display: block;
@@ -121,12 +118,10 @@ class StartpageScreen extends PolymerElement {
           <div class="inner-checkbox-container">
             <dom-repeat items="{{categories}}" as="category">
               <template>
-                <paper-checkbox id="[[category]]" class="checkBox" on-click="_checkboxClicked"
-                  >
-                    <span class="title">[[category]]</span>
-                    <span class="subtitle">[[_getSugeestionSamples(category)]]</span>
-                  </paper-checkbox
-                >
+                <paper-checkbox id="[[category]]" class="checkBox" on-click="_checkboxClicked">
+                  <span class="title">[[category]]</span>
+                  <span class="subtitle">[[_getSugeestionSamples(category)]]</span>
+                </paper-checkbox>
               </template>
             </dom-repeat>
           </div>
@@ -154,17 +149,21 @@ class StartpageScreen extends PolymerElement {
 
   _checkboxClicked(evt) {
     if (evt.target.checked) {
-      this.dispatchEvent(new CustomEvent("category-checked", {
-        detail: {
-          name: evt.target.id
-        }
-      }));
+      this.dispatchEvent(
+        new CustomEvent("category-checked", {
+          detail: {
+            name: evt.target.id
+          }
+        })
+      );
     } else if (!evt.target.checked) {
-      this.dispatchEvent(new CustomEvent("category-unchecked", {
-        detail: {
-          name: evt.target.id
-        }
-      }));
+      this.dispatchEvent(
+        new CustomEvent("category-unchecked", {
+          detail: {
+            name: evt.target.id
+          }
+        })
+      );
     }
   }
 
