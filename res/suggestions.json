@@ -3,7 +3,7 @@
         {
             "name": "Staubsaugen",
             "id" : 1,
-            "time" : 15,
+            "time" : 3,
             "description" : "...",
             "categories" : ["Haushalt"]
         },
