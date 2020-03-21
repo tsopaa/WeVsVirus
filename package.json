@@ -1,5 +1,5 @@
 {
-  "name": "app",
+  "name": "Quarantino",
   "version": "1.0.0",
   "scripts": {
     "start": "polymer serve",
@@ -16,7 +16,6 @@
     "@polymer/paper-radio-button": "3.0.1",
     "@polymer/polymer": "3.2.0",
     "@webcomponents/webcomponentsjs": "2.2.4",
-    "easytimer.js": "^4.1.1",
     "redux": "4.0.4"
   },
   "devDependencies": {

@@ -18,7 +18,7 @@ setPassiveTouchGestures(true);
 
 // Set Polymer's root path to the same value we passed to our service worker
 // in `index.html`.
-setRootPath(MyAppGlobals.rootPath);
+setRootPath(AppGlobals.rootPath);
 
 class Quarantino extends PolymerElement {
   static get is() {
