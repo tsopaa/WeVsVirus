@@ -26,29 +26,30 @@ class ConnyHealthbar extends PolymerElement {
           left: 80px;
         }
         #progress {
-          width: 100%;
-          background-color: grey;
-          height: 100%;
+          background-color: black;
         }
         #bar {
-          width: 100%;
-          height: 100%;
-          background-color: green;
+          background-image: linear-gradient(to bottom right, green, #c5eb8e);
           transition: width 1s;
           transition-timing-function: ease;
+        }
+        .progress-bar {
+          width: 100%;
+          height: 100%;
+          border-radius: 10px;
         }
         .numbers {
           position: absolute;
           left: 50%;
           transform: translateX(-50%);
           top: -4px;
-          color: black;
+          color: white;
         }
       </style>
       <img id="connyImg" class="conny" src="res/conny.png" />
       <div class="progress-container">
-        <div id="progress">
-          <div id="bar"></div>
+        <div id="progress" class="progress-bar">
+          <div id="bar" class="progress-bar"></div>
           <div class="numbers">[[health]]/100</div>
         </div>
       </div>
