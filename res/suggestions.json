@@ -4,6 +4,7 @@
             "name": "Staubsaugen",
             "id" : 1,
             "time" : 15,
+            "description" : "...",
             "categories" : ["Haushalt"]
         },
 
@@ -11,6 +12,7 @@
             "name": "Bad schrubben",
             "id" : 2,
             "time" : 20,
+            "description" : "...",
             "categories" : ["Haushalt"]
         },
 
@@ -18,6 +20,7 @@
             "name": "Rezepte kochen",
             "id" : 3,
             "time" : 25,
+            "description" : "...",
             "categories" : ["Haushalt", "Kochen"]
         },
 
@@ -25,6 +28,7 @@
             "name": "Netflixen",
             "id" : 4,
             "time" : 120,
+            "description" : "...",
             "categories" : ["Entertainment", "Familie", "Sozialleben"]
         },
 
@@ -32,6 +36,7 @@
             "name": "Computerspiele spielen",
             "id" : 5,
             "time" : 60,
+            "description" : "...",
             "categories" : ["Entertainment", "Familie", "Sozialleben"]
         },
 
@@ -39,6 +44,7 @@
             "name": "Oma/Opa anrufen",
             "id" : 6,
             "time" : 30,
+            "description" : "...",
             "categories" : ["Familie", "Sozialleben"]
         },
 
@@ -46,6 +52,7 @@
             "name": "Dessert zubereiten",
             "id" : 7,
             "time" : 15,
+            "description" : "...",
             "categories" : ["Kochen"]
         },
 
@@ -53,6 +60,7 @@
             "name": "Yogaübungen",
             "id" : 8,
             "time" : 30,
+            "description" : "...",
             "categories" : ["Sport"]
         },
 
@@ -60,6 +68,7 @@
             "name": "10 Liegestützen, 20 Kniebeugen",
             "id" : 9,
             "time" : 15,
+            "description" : "...",
             "categories" : ["Sport"]
         },
 
@@ -67,6 +76,7 @@
             "name": "In einem Buch lesen",
             "id" : 10,
             "time" : 60,
+            "description" : "...",
             "categories" : ["Entertainment", "Langeweile"]
         },
 
@@ -74,6 +84,7 @@
             "name": "Kartenspielen",
             "id" : 11,
             "time" : 60,
+            "description" : "...",
             "categories" : ["Entertainment", "Familie", "Langeweile"]
         },
 
@@ -81,6 +92,7 @@
             "name": "Mit Freunden telefonieren",
             "id" : 12,
             "time" : 30,
+            "description" : "...",
             "categories" : ["Sozialleben", "Familie"]
         },
 
@@ -88,6 +100,7 @@
             "name": "Fussball an der Konsole spielen",
             "id" : 13,
             "time" : 60,
+            "description" : "...",
             "categories" : ["Entertainment", "Sport", "Langeweile"]
         },
 
@@ -95,6 +108,7 @@
             "name": "Mit den Kindern Hausaufgaben machen",
             "id" : 14,
             "time" : 60,
+            "description" : "...",
             "categories" : ["Haushalt", "Familie", "Sozialleben"]
         },
 
@@ -102,6 +116,7 @@
             "name": "Musik machen",
             "id" : 15,
             "time" : 30,
+            "description" : "...",
             "categories" : ["Familie", "Entertainment", "Langeweile"]
         },
 
@@ -109,6 +124,7 @@
             "name": "Sprachen lernen",
             "id" : 16,
             "time" : 15,
+            "description" : "...",
             "categories" : ["Entertainment", "Langeweile"]
         },
 
@@ -116,6 +132,7 @@
             "name": "Mit den Kindern spielen",
             "id" : 17,
             "time" : 15,
+            "description" : "...",
             "categories" : ["Familie", "Sozialleben"]
         },
 
@@ -123,6 +140,7 @@
             "name": "Gartenarbeiten",
             "id" : 18,
             "time" : 15,
+            "description" : "...",
             "categories" : ["Haushalt", "Langeweile"]
         },
 
@@ -130,6 +148,7 @@
             "name": "Einfach mal entspannen",
             "id" : 19,
             "time" : 15,
+            "description" : "...",
             "categories" : ["Langeweile"]
         },
 
@@ -137,6 +156,7 @@
             "name": "Tanzen",
             "id" : 20,
             "time" : 15,
+            "description" : "...",
             "categories" : ["Sport", "Entertainment"]
         },
 
@@ -144,6 +164,7 @@
             "name": "Meditieren",
             "id" : 21,
             "time" : 15,
+            "description" : "...",
             "categories" : ["Sport", "Langeweile"]
         },
 
@@ -151,6 +172,7 @@
             "name": "Instagram, Facebook und Co",
             "id" : 22,
             "time" : 25,
+            "description" : "...",
             "categories" : ["Entertainment","Sozialleben", "Langeweile"]
         },
 
@@ -158,6 +180,7 @@
             "name": "Basteln mit den Kindern",
             "id" : 23,
             "time" : 60,
+            "description" : "...",
             "categories" : ["Familie", "Sozialleben"]
         },
 
@@ -165,6 +188,7 @@
             "name": "Ruf alte Freunde an",
             "id" : 24,
             "time" : 30,
+            "description" : "...",
             "categories" : ["Familie", "Sozialleben"]
         },
 
@@ -172,6 +196,7 @@
             "name": "Abwaschen",
             "id" : 25,
             "time" : 20,
+            "description" : "...",
             "categories" : ["Haushalt"]
         },
 
@@ -179,6 +204,7 @@
             "name": "Alkoholfreie Cocktails mixen",
             "id" : 26,
             "time" : 15,
+            "description" : "...",
             "categories" : ["Kochen"]
         },
 
@@ -186,6 +212,7 @@
             "name": "Kuchen backen",
             "id" : 27,
             "time" : 60,
+            "description" : "...",
             "categories" : ["Kochen"]
         },
 
@@ -193,6 +220,7 @@
             "name": "Die nächste Reise planen",
             "id" : 28,
             "time" : 40,
+            "description" : "...",
             "categories" : ["Familie", "Sozialleben"]
         },
 
@@ -200,6 +228,7 @@
             "name": "Musik hören",
             "id" : 29,
             "time" : 15,
+            "description" : "...",
             "categories" : ["Entertainment"]
         },
 
@@ -207,6 +236,7 @@
             "name": "Wäsche waschen",
             "id" : 30,
             "time" : 30,
+            "description" : "...",
             "categories" : ["Haushalt"]
         },
 
@@ -214,6 +244,7 @@
             "name": "Fotos anschauen",
             "id" : 31,
             "time" : 15,
+            "description" : "...",
             "categories" : ["Familie", "Sozialleben", "Langeweile"]
         },
 
@@ -221,6 +252,7 @@
             "name": "Fenster putzen",
             "id" : 32,
             "time" : 60,
+            "description" : "...",
             "categories" : ["Haushalt"]
         },
 
@@ -228,6 +260,7 @@
             "name": "Wasserhähne entkalken",
             "id" : 33,
             "time" : 30,
+            "description" : "...",
             "categories" : ["Haushalt"]
         },
 
@@ -235,6 +268,7 @@
             "name": "Nudelgerichte kochen",
             "id" : 34,
             "time" : 30,
+            "description" : "...",
             "categories" : ["Kochen"]
         },
 
@@ -242,6 +276,7 @@
             "name": "Playlisten aktualisieren",
             "id" : 35,
             "time" : 60,
+            "description" : "...",
             "categories" : ["Entertainment", "Langeweile"]
         },
 
@@ -249,6 +284,7 @@
             "name": "Wohnung aufräumen",
             "id" : 36,
             "time" : 60,
+            "description" : "...",
             "categories" : ["Haushalt"]
         },
 
@@ -256,6 +292,7 @@
             "name": "Übersetze deinen Lieblingssong",
             "id" : 37,
             "time" : 15,
+            "description" : "...",
             "categories" : ["Langeweile"]
         },
 
@@ -263,6 +300,7 @@
             "name": "Malen oder Zeichnen",
             "id" : 38,
             "time" : 60,
+            "description" : "...",
             "categories" : ["Entertainment", "Langeweile"]
         },
 
@@ -270,6 +308,7 @@
             "name": "Origami falten",
             "id" : 39,
             "time" : 30,
+            "description" : "...",
             "categories" : ["Langeweile"]
         },
 
@@ -277,6 +316,7 @@
             "name": "Youtube schauen",
             "id" : 40,
             "time" : 30,
+            "description" : "...",
             "categories" : ["Entertainment", "Sozialleben", "Langeweile"]
         },
 
@@ -284,6 +324,7 @@
             "name": "Ein Sodoku lösen",
             "id" : 41,
             "time" : 30,
+            "description" : "...",
             "categories" : ["Langeweile"]
         },
 
@@ -291,6 +332,7 @@
             "name": "Kreuzworträtsel lösen",
             "id" : 42,
             "time" : 30,
+            "description" : "...",
             "categories" : ["Langeweile"]
         },
 
@@ -298,6 +340,7 @@
             "name": "Stadt, Land, Fluss spielen",
             "id" : 43,
             "time" : 30,
+            "description" : "...",
             "categories" : ["Langeweile"]
         },
 
@@ -305,6 +348,7 @@
             "name": "Klo säubern",
             "id" : 44,
             "time" : 15,
+            "description" : "...",
             "categories" : ["Haushalt"]
         },
 
@@ -312,6 +356,7 @@
             "name": "20 Sit-Ups und planken",
             "id" : 45,
             "time" : 15,
+            "description" : "...",
             "categories" : ["Sport"]
         },
 
@@ -319,6 +364,7 @@
             "name": "Filmabend",
             "id" : 46,
             "time" : 240,
+            "description" : "...",
             "categories" : ["Entertainment", "Sozialleben", "Familie"]
         }
     ]
