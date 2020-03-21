@@ -94,7 +94,7 @@ class TimerScreen extends PolymerElement {
     this.timer = new easytimer.Timer();
     this.timer.addEventListener("targetAchieved", () => {
       this.set("health", this.health - this.time);
-      //TODO: end screen
+      this.dispatchEvent(new CustomEvent("timer-finished"));
     });
   }
 

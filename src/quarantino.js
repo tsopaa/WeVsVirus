@@ -13,6 +13,7 @@ import "./startpage-screen.js";
 import "./suggestion-screen.js";
 import "./timer-screen.js";
 import "./conny-healthbar.js";
+import "./end-screen.js";
 
 // Gesture events like tap and track generated from touch will not be
 // preventable, allowing for better scrolling performance.
@@ -67,6 +68,7 @@ class Quarantino extends PolymerElement {
             <suggestion-screen id="suggestionScreen" suggestions="[[filteredSuggestions]]" style="display: none;">
             </suggestion-screen>
             <timer-screen id="timerScreen" health="{{health}}" style="display: none;"></timer-screen>
+            <end-screen id="endScreen" health="[[health]]" style="display: none;"></end-screen>
           </div> </app-toolbar
       ></app-toolbar>
     `;
@@ -118,17 +120,19 @@ class Quarantino extends PolymerElement {
         this.checkedCategories.filter(el => el !== evt.detail.name)
       );
     });
+    this.$.timerScreen.addEventListener("timer-finished", () => {
+      this._showEndScreen();
+    });
+    this.$.timerScreen.addEventListener("back-clicked", this._showStartPageScreen.bind(this));
 
-    this.$.suggestionScreen.addEventListener("back-clicked", this._resetToStartPage.bind(this));
+    this.$.endScreen.addEventListener("back-clicked", this._showStartPageScreen.bind(this));
 
-    this.$.timerScreen.addEventListener("back-clicked", this._resetToStartPage.bind(this));
+    this.$.suggestionScreen.addEventListener("back-clicked", this._showStartPageScreen.bind(this));
 
     this.$.suggestionScreen.addEventListener("item-clicked", evt => {
       this.$.timerScreen.time = evt.detail.time;
       this.$.timerScreen.title = evt.detail.name;
-      this.$.startpageScreen.style.display = "none";
-      this.$.suggestionScreen.style.display = "none";
-      this.$.timerScreen.style.display = "block";
+      this._showTimerScreen();
     });
   }
 
@@ -148,11 +152,36 @@ class Quarantino extends PolymerElement {
     } else {
       this.set("filteredSuggestions", this.suggestions);
     }
+    this._showSuggestionScreen();
+  }
+
+  _showEndScreen() {
+    this.$.endScreen.style.display = "block";
+    this.$.timerScreen.style.display = "none";
+    this.$.startpageScreen.style.display = "none";
+    this.$.suggestionScreen.style.display = "none";
+  }
+
+  _showTimerScreen() {
+    this.$.endScreen.style.display = "none";
+    this.$.startpageScreen.style.display = "none";
+    this.$.suggestionScreen.style.display = "none";
+    this.$.timerScreen.style.display = "block";
+  }
+
+  _showSuggestionScreen() {
+    this.$.endScreen.style.display = "none";
     this.$.startpageScreen.style.display = "none";
     this.$.suggestionScreen.style.display = "block";
     this.$.timerScreen.style.display = "none";
   }
 
+  _showStartPageScreen() {
+    this.$.endScreen.style.display = "none";
+    this.$.startpageScreen.style.display = "block";
+    this.$.suggestionScreen.style.display = "none";
+    this.$.timerScreen.style.display = "none";
+  }
   _setSuggestions() {
     if (this.$.suggestionsReader.lastResponse && this.$.suggestionsReader.lastResponse.suggestions)
       this.suggestions = this.$.suggestionsReader.lastResponse.suggestions;
@@ -169,12 +198,6 @@ class Quarantino extends PolymerElement {
         });
       });
     }
-  }
-
-  _resetToStartPage() {
-    this.$.startpageScreen.style.display = "block";
-    this.$.suggestionScreen.style.display = "none";
-    this.$.timerScreen.style.display = "none";
   }
 }
 
