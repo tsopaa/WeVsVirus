@@ -70,6 +70,7 @@ class SuggestionScreen extends PolymerElement {
       new CustomEvent("item-clicked", {
         detail: {
           id: suggestion.id,
+          name: suggestion.name,
           time: suggestion.time
         }
       })
