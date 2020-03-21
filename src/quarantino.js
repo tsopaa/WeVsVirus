@@ -4,6 +4,7 @@ import "@polymer/app-route/app-location.js";
 import "@polymer/app-route/app-route.js";
 import "@polymer/paper-button/paper-button.js";
 import "@polymer/iron-ajax/iron-ajax.js";
+import "@polymer/app-layout/app-toolbar/app-toolbar.js";
 
 import { store } from "./store.js";
 import { updateAccessible } from "./actions/app.js";
@@ -11,6 +12,7 @@ import { updateAccessible } from "./actions/app.js";
 import "./startpage-screen.js";
 import "./suggestion-screen.js";
 import "./timer-screen.js";
+import "./conny-healthbar.js";
 
 // Gesture events like tap and track generated from touch will not be
 // preventable, allowing for better scrolling performance.
@@ -35,10 +37,17 @@ class Quarantino extends PolymerElement {
         }
         .screen {
           position: absolute;
-          top: 0;
+          top: 64px;
           left: 0;
           right: 0;
           bottom: 0;
+        }
+        app-toolbar {
+          position: fixed;
+          width: 100%;
+          border-bottom: 1px solid white;
+          background-color: #222222;
+          z-index: 1;
         }
       </style>
 
@@ -52,12 +61,14 @@ class Quarantino extends PolymerElement {
       <app-location route="{{route}}" url-space-regex="^[[rootPath]]"> </app-location>
 
       <app-route route="{{route}}" pattern="[[rootPath]]:page" data="{{routeData}}" tail="{{subroute}}"> </app-route>
-      <div id="screen" class="screen">
-        <startpage-screen id="startpageScreen" categories="[[categories]]"></startpage-screen>
-        <suggestion-screen id="suggestionScreen" suggestions="[[filteredSuggestions]]" style="display: none;">
-        </suggestion-screen>
-        <timer-screen id="timerScreen" style="display: none;"></timer-screen>
-      </div>
+      <app-toolbar><conny-healthbar></conny-healthbar></app-toolbar>
+          <div id="screen" class="screen">
+            <startpage-screen id="startpageScreen" categories="[[categories]]"></startpage-screen>
+            <suggestion-screen id="suggestionScreen" suggestions="[[filteredSuggestions]]" style="display: none;">
+            </suggestion-screen>
+            <timer-screen id="timerScreen" style="display: none;"></timer-screen>
+          </div> </app-toolbar
+      ></app-toolbar>
     `;
   }
 
