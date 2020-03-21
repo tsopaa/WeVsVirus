@@ -64,7 +64,7 @@ class Quarantino extends PolymerElement {
       <app-route route="{{route}}" pattern="[[rootPath]]:page" data="{{routeData}}" tail="{{subroute}}"> </app-route>
       <app-toolbar><conny-healthbar health="{{health}}"></conny-healthbar></app-toolbar>
           <div id="screen" class="screen">
-            <startpage-screen id="startpageScreen" categories="[[categories]]"></startpage-screen>
+            <startpage-screen id="startpageScreen" categories="[[categories]]" suggestions="[[suggestions]]"></startpage-screen>
             <suggestion-screen id="suggestionScreen" suggestions="[[filteredSuggestions]]" style="display: none;">
             </suggestion-screen>
             <timer-screen id="timerScreen" health="{{health}}" style="display: none;"></timer-screen>
