@@ -1,0 +1,143 @@
+{
+   "suggestions": [
+        {
+            "name": "Staubsaugen",
+            "id" : 1,
+            "time" : 15,
+            "categories" : ["Haushalt"]
+        },
+
+        {
+            "name": "Bad schrubben",
+            "id" : 2,
+            "time" : 20,
+            "categories" : ["Haushalt"]
+        },
+
+        {
+            "name": "Rezepte kochen",
+            "id" : 3,
+            "time" : 25,
+            "categories" : ["Haushalt", "Kochen"]
+        },
+
+        {
+            "name": "Netflixen",
+            "id" : 4,
+            "time" : 120,
+            "categories" : ["Entertainment", "Familie", "Sozialleben"]
+        },
+
+        {
+            "name": "Computerspiele spielen",
+            "id" : 5,
+            "time" : 60,
+            "categories" : ["Entertainment", "Familie", "Sozialleben"]
+        },
+
+        {
+            "name": "Oma/Opa anrufen",
+            "id" : 6,
+            "time" : 30,
+            "categories" : ["Familie", "Sozialleben"]
+        },
+
+        {
+            "name": "Dessert zubereiten",
+            "id" : 7,
+            "time" : 15,
+            "categories" : ["Kochen"]
+        },
+
+        {
+            "name": "Yogaübungen",
+            "id" : 8,
+            "time" : 30,
+            "categories" : ["Sport"]
+        },
+
+        {
+            "name": "10 Liegestützen, 20 Kniebeugen",
+            "id" : 9,
+            "time" : 15,
+            "categories" : ["Sport"]
+        },
+
+        {
+            "name": "In einem Buch lesen",
+            "id" : 10,
+            "time" : 60,
+            "categories" : ["Entertainment", "Langeweile"]
+        },
+
+        {
+            "name": "Kartenspielen",
+            "id" : 11,
+            "time" : 60,
+            "categories" : ["Entertainment", "Familie", "Langeweile"]
+        },
+
+        {
+            "name": "Mit Freunden telefonieren",
+            "id" : 12,
+            "time" : 30,
+            "categories" : ["Sozialleben", "Familie"]
+        },
+
+        {
+            "name": "Fussball an der Konsole spielen",
+            "id" : 13,
+            "time" : 60,
+            "categories" : ["Entertainment", "Sport", "Langeweile"]
+        },
+
+        {
+            "name": "Mit den Kindern Hausaufgaben machen",
+            "id" : 14,
+            "time" : 60,
+            "categories" : ["Haushalt", "Familie", "Sozialleben"]
+        },
+
+        {
+            "name": "Musik machen",
+            "id" : 15,
+            "time" : 30,
+            "categories" : ["Familie", "Entertainment", "Langeweile"]
+        },
+
+        {
+            "name": "Sprachen lernen",
+            "id" : 16,
+            "time" : 15,
+            "categories" : ["Haushalt"]
+        },
+
+        {
+            "name": "Mit den Kindern spielen",
+            "id" : 17,
+            "time" : 15,
+            "categories" : ["Familie", "Sozialleben"]
+        },
+
+        {
+            "name": "Gartenarbeiten",
+            "id" : 18,
+            "time" : 15,
+            "categories" : ["Haushalt", "Langeweile"]
+        },
+
+        {
+            "name": "Einfach mal entspannen",
+            "id" : 19,
+            "time" : 15,
+            "categories" : ["Langeweile"]
+        },
+
+        {
+            "name": "Tanzen",
+            "id" : 20,
+            "time" : 15,
+            "categories" : ["Sport", "Entertainment"]
+        }
+    ]
+}
