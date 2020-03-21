@@ -43,7 +43,6 @@ class SuggestionElement extends PolymerElement {
 
   ready() {
     super.ready();
-    console.log(this.title);
   }
 }
 

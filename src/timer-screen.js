@@ -13,18 +13,22 @@ class TimerScreen extends PolymerElement {
         }
       </style>
 
-      Timer
+      Timer [[time]] min.
     `;
   }
 
   static get properties() {
-    return {};
+    return {
+      time: {
+        type: Number,
+        value: 0
+      }
+    };
   }
 
   ready() {
     super.ready();
   }
-
 }
 
 window.customElements.define(TimerScreen.is, TimerScreen);

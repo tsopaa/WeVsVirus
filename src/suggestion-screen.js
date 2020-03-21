@@ -36,8 +36,11 @@ class SuggestionScreen extends PolymerElement {
         <dom-repeat items="{{suggestions}}">
           <template>
             <div>
-              <suggestion-element id="[[item.id]]" title="[[item.name]]" on-click="_dispatchItemClickedEvent"></suggestion-element>
-
+              <suggestion-element
+                id="[[item.id]]"
+                title="[[item.name]]"
+                on-click="_dispatchItemClickedEvent"
+              ></suggestion-element>
             </div>
           </template>
         </dom-repeat>
@@ -51,9 +54,9 @@ class SuggestionScreen extends PolymerElement {
         type: Object,
         value() {
           return [
-            { id: 1, name: "Staubsaugen" },
-            { id: 2, name: "Mittag kochen" },
-            { id: 3, name: "chillen mit kids" }
+            { id: 1, name: "Staubsaugen", time: 15 },
+            { id: 2, name: "Mittag kochen", time: 30 },
+            { id: 3, name: "chillen mit kids", time: 60 }
           ];
         }
       }
@@ -69,7 +72,15 @@ class SuggestionScreen extends PolymerElement {
   }
 
   _dispatchItemClickedEvent(evt) {
-    this.dispatchEvent(new CustomEvent("item-clicked", {detail: {id: evt.target.id}}));
+    let suggestion = this.suggestions.find(el => el.id == evt.target.id);
+    this.dispatchEvent(
+      new CustomEvent("item-clicked", {
+        detail: {
+          id: suggestion.id,
+          time: suggestion.time
+        }
+      })
+    );
   }
 }
 
