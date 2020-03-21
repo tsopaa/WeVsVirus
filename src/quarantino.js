@@ -3,6 +3,7 @@ import { setPassiveTouchGestures, setRootPath } from "@polymer/polymer/lib/utils
 import "@polymer/app-route/app-location.js";
 import "@polymer/app-route/app-route.js";
 import "@polymer/paper-button/paper-button.js";
+import "@polymer/iron-ajax/iron-ajax.js";
 
 import { store } from "./store.js";
 import { updateAccessible } from "./actions/app.js";
@@ -42,11 +43,18 @@ class Quarantino extends PolymerElement {
         }
       </style>
 
+      <iron-ajax
+        id="suggestionsReader"
+        auto
+        url="res/suggestions.json"
+        handle-as="json"
+        on-response="_setSuggestions"
+      ></iron-ajax>
       <app-location route="{{route}}" url-space-regex="^[[rootPath]]"> </app-location>
 
       <app-route route="{{route}}" pattern="[[rootPath]]:page" data="{{routeData}}" tail="{{subroute}}"> </app-route>
       <div id="screen" class="screen">
-        <startpage-screen id="startpageScreen"></startpage-screen>
+        <startpage-screen id="startpageScreen" categories="[[categories]]"></startpage-screen>
         <suggestion-screen id="suggestionScreen" suggestions="[[suggestions]]" style="display: none;">
         </suggestion-screen>
         <timer-screen id="timerScreen" style="display: none;"></timer-screen>
@@ -58,13 +66,10 @@ class Quarantino extends PolymerElement {
     return {
       suggestions: {
         type: Object,
-        value() {
-          return [
-            { id: 1, name: "Staubsaugen", time: 15 },
-            { id: 2, name: "Mittag kochen", time: 20 },
-            { id: 3, name: "chillen mit kids", time: 30 }
-          ];
-        }
+        observer: "_assignCategories"
+      },
+      catgeories: {
+        type: Object
       }
     };
   }
@@ -88,6 +93,24 @@ class Quarantino extends PolymerElement {
       this.$.suggestionScreen.style.display = "none";
       this.$.timerScreen.style.display = "block";
     });
+  }
+
+  _setSuggestions() {
+    if (this.$.suggestionsReader.lastResponse && this.$.suggestionsReader.lastResponse.suggestions)
+      this.suggestions = this.$.suggestionsReader.lastResponse.suggestions;
+  }
+
+  _assignCategories() {
+    this.categories = [];
+    if (this.suggestions) {
+      this.suggestions.forEach(suggestion => {
+        suggestion.categories.forEach(category => {
+          if (!this.categories.find(el => el === category)) {
+            this.categories.push(category);
+          }
+        });
+      });
+    }
   }
 
   _resetToStartPage() {

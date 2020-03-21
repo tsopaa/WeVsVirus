@@ -27,7 +27,6 @@ class StartpageScreen extends PolymerElement {
           text-align: center;
           color: white;
           margin: 20% 10% 10% 10%;
-
         }
 
         .checkBox {
@@ -38,7 +37,6 @@ class StartpageScreen extends PolymerElement {
           display: block;
           left: 50%;
           transform: translateX(-50%);
-
         }
 
         .checkbox-container {
@@ -46,7 +44,6 @@ class StartpageScreen extends PolymerElement {
           width: 90%;
           margin: 5% 0 0 5%;
           font-size: 18px;
-
         }
 
         .inner-checkbox-container {
@@ -67,20 +64,22 @@ class StartpageScreen extends PolymerElement {
 
       <div class="checkbox-container">
         <div class="inner-checkbox-container">
-          <paper-checkbox class="checkBox">Unchecked</paper-checkbox>
-          <paper-checkbox class="checkBox">UncheckedUNCHECKED</paper-checkbox>
-          <paper-checkbox class="checkBox">Unchecked</paper-checkbox>
-          <paper-checkbox class="checkBox">Unchecked</paper-checkbox>
-          <paper-checkbox class="checkBox">Unchecked</paper-checkbox>
-          <paper-checkbox class="checkBox">Unchecked</paper-checkbox>
-          <paper-checkbox class="checkBox">Unchecked</paper-checkbox>
+          <dom-repeat items="{{categories}}" as="category">
+            <template>
+              <paper-checkbox class="checkBox">[[category]]</paper-checkbox>
+            </template>
+          </dom-repeat>
         </div>
       </div>
     `;
   }
 
   static get properties() {
-    return {};
+    return {
+      categories: {
+        type: Object
+      }
+    };
   }
 
   ready() {
