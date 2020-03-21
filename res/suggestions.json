@@ -4,7 +4,7 @@
             "name": "Staubsaugen",
             "id" : 1,
             "time" : 15,
-            "description" : "...",
+            "description" : "Einfach mal den Staubsauger nehmen und tun was man sonst immer nicht wollte",
             "categories" : ["Haushalt"]
         },
 
@@ -12,7 +12,7 @@
             "name": "Bad schrubben",
             "id" : 2,
             "time" : 20,
-            "description" : "...",
+            "description" : "Danach liegt man in der Badewanne nicht nur bequem, sondern auch rein",
             "categories" : ["Haushalt"]
         },
 
@@ -20,7 +20,7 @@
             "name": "Rezepte kochen",
             "id" : 3,
             "time" : 25,
-            "description" : "...",
+            "description" : "Kochen Sie doch mal dieses eine Rezept welches si schon immer ausprobieren wollten",
             "categories" : ["Haushalt", "Kochen"]
         },
 
@@ -28,7 +28,7 @@
             "name": "Netflixen",
             "id" : 4,
             "time" : 120,
-            "description" : "...",
+            "description" : "Endlich können Sie ohne schlechtes Gewissen schauen was sie möchten",
             "categories" : ["Entertainment", "Familie", "Sozialleben"]
         },
 
@@ -36,7 +36,7 @@
             "name": "Computerspiele spielen",
             "id" : 5,
             "time" : 60,
-            "description" : "...",
+            "description" : "Egal ob Konsole aus den 90ern oder der neue PC. Spielen Sie all die Dinge diese immer schon mal nachholen wollten",
             "categories" : ["Entertainment", "Familie", "Sozialleben"]
         },
 
@@ -44,7 +44,7 @@
             "name": "Oma/Opa anrufen",
             "id" : 6,
             "time" : 30,
-            "description" : "...",
+            "description" : "Wenn man Opa/Oma schon nicht besuchen kann, dann sollte man trotzdem telefonisch Kontakt halten",
             "categories" : ["Familie", "Sozialleben"]
         },
 
@@ -52,7 +52,7 @@
             "name": "Dessert zubereiten",
             "id" : 7,
             "time" : 15,
-            "description" : "...",
+            "description" : "Suchen Sie sich im Internet ein leckeres Dessert und bereiten sie es frisch zu",
             "categories" : ["Kochen"]
         },
 
@@ -60,7 +60,7 @@
             "name": "Yogaübungen",
             "id" : 8,
             "time" : 30,
-            "description" : "...",
+            "description" : "Yoga hilft Stress zu reduzieren und entspannt. Achtung: Machen Sie nur Übungen zu denen Sie sich in der Lage fühlen",
             "categories" : ["Sport"]
         },
 
@@ -68,7 +68,7 @@
             "name": "10 Liegestützen, 20 Kniebeugen",
             "id" : 9,
             "time" : 15,
-            "description" : "...",
+            "description" : "Sport kann man auch zuhause einfach machen",
             "categories" : ["Sport"]
         },
 
@@ -76,7 +76,7 @@
             "name": "In einem Buch lesen",
             "id" : 10,
             "time" : 60,
-            "description" : "...",
+            "description" : "Sicher haben auch Sie noch ein paar Bücher im Regal welche Sie noch nicht gelesen haben. Machen Sie sich einen Tee und lesen Sie all das was Sie sonst zeitlich vielleicht nicht geschafft haben",
             "categories" : ["Entertainment", "Langeweile"]
         },
 
@@ -84,7 +84,7 @@
             "name": "Kartenspielen",
             "id" : 11,
             "time" : 60,
-            "description" : "...",
+            "description" : "Ein echter Klassiker, mit der Familie ein wenig Karten spielen",
             "categories" : ["Entertainment", "Familie", "Langeweile"]
         },
 
@@ -92,7 +92,7 @@
             "name": "Mit Freunden telefonieren",
             "id" : 12,
             "time" : 30,
-            "description" : "...",
+            "description" : "Rufen Sie doch mal Ihre Bekannten an. Diese werden sich sicher über die wilkommene Ablankung freuen",
             "categories" : ["Sozialleben", "Familie"]
         },
 
@@ -100,7 +100,7 @@
             "name": "Fussball an der Konsole spielen",
             "id" : 13,
             "time" : 60,
-            "description" : "...",
+            "description" : "Egal ob online, alleine oder mit dem WG-Kumpel auf der Couch Fussball an der Konsole macht immer Spass",
             "categories" : ["Entertainment", "Sport", "Langeweile"]
         },
 
@@ -108,7 +108,7 @@
             "name": "Mit den Kindern Hausaufgaben machen",
             "id" : 14,
             "time" : 60,
-            "description" : "...",
+            "description" : "Erledigen Sie mit Ihren Kindern den Lernstoff aus der Schule",
             "categories" : ["Haushalt", "Familie", "Sozialleben"]
         },
 
@@ -116,7 +116,7 @@
             "name": "Musik machen",
             "id" : 15,
             "time" : 30,
-            "description" : "...",
+            "description" : "Greifen Sie doch mal wieder zu dem angestaubten Instrument in der Ecke und schauen Sie was Sie noch können. Wenn Sie kein Instrument spielen kann man auch ein Lied singen",
             "categories" : ["Familie", "Entertainment", "Langeweile"]
         },
 
@@ -124,7 +124,7 @@
             "name": "Sprachen lernen",
             "id" : 16,
             "time" : 15,
-            "description" : "...",
+            "description" : "Frischen Sie eine gelernte Fremdsprache wieder auf oder lernen Sie eine ganz neue. Die Angebote zum Sprachen lernen sind riesig",
             "categories" : ["Entertainment", "Langeweile"]
         },
 
@@ -132,7 +132,7 @@
             "name": "Mit den Kindern spielen",
             "id" : 17,
             "time" : 15,
-            "description" : "...",
+            "description" : "Nehmen Sie sich Zeit für das wichtigste im Leben. Ihre Familie und Kinder. Verbringen Sie ein wenig Zeit mit Ihnen. Man ist nie zu alt zum Spielen",
             "categories" : ["Familie", "Sozialleben"]
         },
 
@@ -140,7 +140,7 @@
             "name": "Gartenarbeiten",
             "id" : 18,
             "time" : 15,
-            "description" : "...",
+            "description" : "Wenn es Ihnen möglich ist und Sie damit niemanden gefährden, können Sie sich auch um Ihren Garten kümmern",
             "categories" : ["Haushalt", "Langeweile"]
         },
 
@@ -148,7 +148,7 @@
             "name": "Einfach mal entspannen",
             "id" : 19,
             "time" : 15,
-            "description" : "...",
+            "description" : "Suchen Sie sich Ihren Lieblingsplatz in der Wohnung und gehen Sie einmal wirklich in sich. Lassen Sie die Gedanken schweifen und entspannen Sie dabei",
             "categories" : ["Langeweile"]
         },
 
@@ -156,7 +156,7 @@
             "name": "Tanzen",
             "id" : 20,
             "time" : 15,
-            "description" : "...",
+            "description" : "Musik an und los. Tanzen zur Lieblingsmusik macht Spass und die Bewegung tut gut",
             "categories" : ["Sport", "Entertainment"]
         },
 
@@ -164,7 +164,7 @@
             "name": "Meditieren",
             "id" : 21,
             "time" : 15,
-            "description" : "...",
+            "description" : "Im Internet finden Sie viele Anleitungen zum Meditieren. Nehmen Sie sich die Zeit und probieren Sie es aus",
             "categories" : ["Sport", "Langeweile"]
         },
 
@@ -172,7 +172,7 @@
             "name": "Instagram, Facebook und Co",
             "id" : 22,
             "time" : 25,
-            "description" : "...",
+            "description" : "Endlich darf man die größten Zeitfresser ohne schlechtes Gewissen benutzen",
             "categories" : ["Entertainment","Sozialleben", "Langeweile"]
         },
 
@@ -180,23 +180,23 @@
             "name": "Basteln mit den Kindern",
             "id" : 23,
             "time" : 60,
-            "description" : "...",
+            "description" : "Egal ob mit Holz oder Papier, suchen Sie sich mit den Kleinen ein Projekt welches Sie zusammen anpacken können",
             "categories" : ["Familie", "Sozialleben"]
         },
 
         {
-            "name": "Ruf alte Freunde an",
+            "name": "Papierkram erledigen",
             "id" : 24,
             "time" : 30,
-            "description" : "...",
-            "categories" : ["Familie", "Sozialleben"]
+            "description" : "Erledigen Sie den lästigen Papierkram der sich angestaut hat",
+            "categories" : ["Haushalt"]
         },
 
         {
             "name": "Abwaschen",
             "id" : 25,
             "time" : 20,
-            "description" : "...",
+            "description" : "Keiner will das, aber es muss nun mal getan werden",
             "categories" : ["Haushalt"]
         },
 
@@ -204,7 +204,7 @@
             "name": "Alkoholfreie Cocktails mixen",
             "id" : 26,
             "time" : 15,
-            "description" : "...",
+            "description" : "Suchen Sie sich Rezepte für Drinks und mixen Sie sich eine besondere Erfrischung",
             "categories" : ["Kochen"]
         },
 
@@ -212,7 +212,7 @@
             "name": "Kuchen backen",
             "id" : 27,
             "time" : 60,
-            "description" : "...",
+            "description" : "Suchen Sie sich ein Backrezept und legen Sie los. Käsekuchen ist fantastisch und gelingt fast immer",
             "categories" : ["Kochen"]
         },
 
@@ -220,7 +220,7 @@
             "name": "Die nächste Reise planen",
             "id" : 28,
             "time" : 40,
-            "description" : "...",
+            "description" : "Denken Sie an die Zeit nach der Quarantäne. Suchen Sie sich ein Ziel zu dem Sie schon immer hin wollten und fangen Sie an sich darüber zu informieren",
             "categories" : ["Familie", "Sozialleben"]
         },
 
@@ -228,7 +228,7 @@
             "name": "Musik hören",
             "id" : 29,
             "time" : 15,
-            "description" : "...",
+            "description" : "Legen Sie sich auf das Sofa und hören Sie ihre Lieblingsmusik bewusst",
             "categories" : ["Entertainment"]
         },
 
@@ -236,7 +236,7 @@
             "name": "Wäsche waschen",
             "id" : 30,
             "time" : 30,
-            "description" : "...",
+            "description" : "Machen Sie ihre Wäsche",
             "categories" : ["Haushalt"]
         },
 
@@ -244,7 +244,7 @@
             "name": "Fotos anschauen",
             "id" : 31,
             "time" : 15,
-            "description" : "...",
+            "description" : "Schauen Sie sich mit der Familie Fotoalben an. Dabei kommen immerwieder lustige Geschichten zum Vorschein",
             "categories" : ["Familie", "Sozialleben", "Langeweile"]
         },
 
@@ -252,7 +252,7 @@
             "name": "Fenster putzen",
             "id" : 32,
             "time" : 60,
-            "description" : "...",
+            "description" : "Damit auch Sie wieder eine klare Sicht auf die Dinge außerhalb der eigenen Wände haben",
             "categories" : ["Haushalt"]
         },
 
@@ -268,7 +268,7 @@
             "name": "Nudelgerichte kochen",
             "id" : 34,
             "time" : 30,
-            "description" : "...",
+            "description" : "Nudelrezepte können schnell gekocht werden und auch Kinder essen diese gerne",
             "categories" : ["Kochen"]
         },
 
@@ -276,7 +276,7 @@
             "name": "Playlisten aktualisieren",
             "id" : 35,
             "time" : 60,
-            "description" : "...",
+            "description" : "Räumen Sie Ihre Musikplaylisten auf, die meisten haben damit einen ganzen Tag zu tun und suchen Sie nach neuer toller Musik",
             "categories" : ["Entertainment", "Langeweile"]
         },
 
@@ -284,7 +284,7 @@
             "name": "Wohnung aufräumen",
             "id" : 36,
             "time" : 60,
-            "description" : "...",
+            "description" : "Es hilft wenn man die Räume noch betreten kann",
             "categories" : ["Haushalt"]
         },
 
@@ -292,7 +292,7 @@
             "name": "Übersetze deinen Lieblingssong",
             "id" : 37,
             "time" : 15,
-            "description" : "...",
+            "description" : "Wissen Sie worüber es in diesem einen Lied überhaupt geht? Nein? Dann übersetzen Sie den Song doch einfach mal",
             "categories" : ["Langeweile"]
         },
 
@@ -300,7 +300,7 @@
             "name": "Malen oder Zeichnen",
             "id" : 38,
             "time" : 60,
-            "description" : "...",
+            "description" : "Jeder kann malen. Die meisten machen es bloß nicht",
             "categories" : ["Entertainment", "Langeweile"]
         },
 
@@ -308,7 +308,7 @@
             "name": "Origami falten",
             "id" : 39,
             "time" : 30,
-            "description" : "...",
+            "description" : "Suchen Sie sich eine Anleitung im Internet und versuchen Sie dabei zu entspannen",
             "categories" : ["Langeweile"]
         },
 
@@ -316,7 +316,7 @@
             "name": "Youtube schauen",
             "id" : 40,
             "time" : 30,
-            "description" : "...",
+            "description" : "Egal ob eine Dokumentation oder die neuen Trends, lenken Sie sich ein wenig mit Youtube ab",
             "categories" : ["Entertainment", "Sozialleben", "Langeweile"]
         },
 
@@ -324,7 +324,7 @@
             "name": "Ein Sodoku lösen",
             "id" : 41,
             "time" : 30,
-            "description" : "...",
+            "description" : "Es ist gar nicht mal so leicht",
             "categories" : ["Langeweile"]
         },
 
@@ -332,7 +332,7 @@
             "name": "Kreuzworträtsel lösen",
             "id" : 42,
             "time" : 30,
-            "description" : "...",
+            "description" : "Halten Sie ihren Kopf fit. Auch ohne Quarantäne ein guter Zeitfresser",
             "categories" : ["Langeweile"]
         },
 
@@ -340,7 +340,7 @@
             "name": "Stadt, Land, Fluss spielen",
             "id" : 43,
             "time" : 30,
-            "description" : "...",
+            "description" : "Ein Klassiker den man nur mit Stift und Papier spielen kann oder auch online",
             "categories" : ["Langeweile"]
         },
 
@@ -348,7 +348,7 @@
             "name": "Klo säubern",
             "id" : 44,
             "time" : 15,
-            "description" : "...",
+            "description" : "Auch das muss mal gemacht werden",
             "categories" : ["Haushalt"]
         },
 
@@ -356,7 +356,7 @@
             "name": "20 Sit-Ups und planken",
             "id" : 45,
             "time" : 15,
-            "description" : "...",
+            "description" : "Ein paar kleine Übungen am Tag halten fit und machen Den Kopf frei",
             "categories" : ["Sport"]
         },
 
@@ -364,7 +364,7 @@
             "name": "Filmabend",
             "id" : 46,
             "time" : 240,
-            "description" : "...",
+            "description" : "Ob mit der Familie oder auch alleine, ein Filmabend ist einentspannender Zeitvertreib",
             "categories" : ["Entertainment", "Sozialleben", "Familie"]
         }
     ]
