@@ -11,15 +11,23 @@ class TimerScreen extends PolymerElement {
           display: block;
           color: white;
         }
+        .timer {
+          font-size: 60px;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
       </style>
-      <iron-icon icon="arrow-back" on-click="_dispatchBackClickedEvent"></iron-icon>
+      <iron-icon icon="arrow-back" on-click="_backClicked"></iron-icon>
 
       Timer [[time]] min.
-      <div id="timer">[[currentTimerTime]]</div>
+      <div id="timer" class="timer">[[currentTimerTime]]</div>
     `;
   }
 
-  _dispatchBackClickedEvent() {
+  _backClicked() {
+    this.timer.stop();
     this.dispatchEvent(new CustomEvent("back-clicked"));
   }
 
