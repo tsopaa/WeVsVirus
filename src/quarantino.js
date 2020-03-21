@@ -60,9 +60,9 @@ class Quarantino extends PolymerElement {
         type: Object,
         value() {
           return [
-            { id: 1, name: "Staubsaugen", time: 1 },
-            { id: 2, name: "Mittag kochen", time: 2 },
-            { id: 3, name: "chillen mit kids", time: 3 }
+            { id: 1, name: "Staubsaugen", time: 15 },
+            { id: 2, name: "Mittag kochen", time: 20 },
+            { id: 3, name: "chillen mit kids", time: 30 }
           ];
         }
       }
