@@ -34,7 +34,6 @@ class Quarantino extends PolymerElement {
           display: block;
         }
         .screen {
-          background-color: black;
           position: absolute;
           top: 0;
           left: 0;

@@ -50,6 +50,28 @@ class StartpageScreen extends PolymerElement {
           margin-left: 10%;
         }
 
+        .conny-img {
+          height: 380px;
+          width: 380px;
+          /* position: absolute; */
+
+          bottom: 10px;
+          right: -80px;
+        }
+        .start-text {
+          color: white;
+          font-size: 20px;
+          text-align: left;
+        }
+        .start-text--top {
+          width: 90%;
+          margin: 10% 5% 5% 5%;
+        }
+        .start-text--bottom {
+          margin: 5% 5% 5% 5%;
+          width: 90%;
+        }
+
         @media (max-width: 700px) {
           .random-btn {
             width: 80%;
@@ -57,20 +79,32 @@ class StartpageScreen extends PolymerElement {
           }
         }
       </style>
-      <div class="text-container">
-        Deine täglichen Quarantäne-Vorschläge
+      <div id="startHint" on-click="_hideStartHint">
+        <div class="start-text start-text--top">
+          Hilf dabei die Verbreitung des Corona-Virus zu stoppen und bleib Zuhause!
+        </div>
+        <div class="start-text start-text--bottom">
+          Hier sind einige Vorschläge, was du Zuhause alles tun könntest. Und ganz nebenbei kannst du Conny die
+          Corona-Vire bekämpfen.
+        </div>
+        <img class="conny-img" src="res/conny.png" />
       </div>
-      <paper-button class="random-btn" on-click="_dispatchRandomBtnClickedEvent">Random</paper-button>
+      <div id="startpage" style="display: none;">
+        <div class="text-container">
+          Deine täglichen Quarantäne-Vorschläge
+        </div>
+        <paper-button class="random-btn" on-click="_dispatchRandomBtnClickedEvent">Random</paper-button>
 
-      <div class="checkbox-container">
-        <div class="inner-checkbox-container">
-          <dom-repeat items="{{categories}}" as="category">
-            <template>
-              <paper-checkbox id="[[category]]" class="checkBox" on-click="_checkboxClicked"
-                >[[category]]</paper-checkbox
-              >
-            </template>
-          </dom-repeat>
+        <div class="checkbox-container">
+          <div class="inner-checkbox-container">
+            <dom-repeat items="{{categories}}" as="category">
+              <template>
+                <paper-checkbox id="[[category]]" class="checkBox" on-click="_checkboxClicked"
+                  >[[category]]</paper-checkbox
+                >
+              </template>
+            </dom-repeat>
+          </div>
         </div>
       </div>
     `;
@@ -86,6 +120,11 @@ class StartpageScreen extends PolymerElement {
 
   ready() {
     super.ready();
+  }
+
+  _hideStartHint() {
+    this.$.startHint.style.display = "none";
+    this.$.startpage.style.display = " block";
   }
 
   _checkboxClicked(evt) {
