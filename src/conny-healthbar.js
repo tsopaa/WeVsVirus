@@ -26,17 +26,17 @@ class ConnyHealthbar extends PolymerElement {
           left: 80px;
         }
         #progress {
-          background-color: black;
+          background-color: #333;
         }
         #bar {
-          background-image: linear-gradient(to bottom right, green, #c5eb8e);
+          background-color: green;
           transition: width 1s;
           transition-timing-function: ease;
         }
         .progress-bar {
           width: 100%;
           height: 100%;
-          border-radius: 10px;
+          border-radius: 2px;
         }
         .numbers {
           position: absolute;

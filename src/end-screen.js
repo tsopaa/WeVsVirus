@@ -17,13 +17,38 @@ class EndScreen extends PolymerElement {
         img {
           width: 300px;
           height: 300px;
+          position: relative;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+        .text {
+          font-size: 20px;
+          margin: 5%;
+          text-align: center;
+        }
+        .continue-btn {
+          background-color: darkgreen;
+          color: white;
+          position: relative;
+          width: 40%;
+          margin-left: 30%;
         }
       </style>
 
       <iron-icon icon="arrow-back" on-click="_backClicked"></iron-icon>
-      <div>[[message]]</div>
-      <img id="dead" src="res/conny-dead.png" style="display: none;" />
-      <img id="alive" src="res/conny.png" style="display: none;" />
+      <div id="dead" style="display: none;">
+        <img src="res/conny-dead.png" />
+        <div class="text">
+          Du hast es geschafft, du hast Conny für heute besiegt! Komme morgen wieder, um sie erneut herauszufordern.
+        </div>
+      </div>
+      <div id="alive">
+        <div class="text">
+          Hol dir noch mehr Vorschläge um Conny in die Knie zu zwängen!
+        </div>
+        <img src="res/conny.png" />
+        <paper-button class="continue-btn" on-click="_backClicked">Weiter gehts!</paper-button>
+      </div>
     `;
   }
 
@@ -42,11 +67,9 @@ class EndScreen extends PolymerElement {
 
   _healthChanged() {
     if (this.health <= 0) {
-      this.message = "CONNY IST TOT ";
       this.$.dead.style.display = "block";
       this.$.alive.style.display = "none";
     } else {
-      this.message = "Hol dir noch mehr Vorschläge um Conny in die Knie zu zwängen";
       this.$.alive.style.display = "block";
       this.$.dead.style.display = "none";
     }
