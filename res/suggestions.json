@@ -138,6 +138,104 @@
             "id" : 20,
             "time" : 15,
             "categories" : ["Sport", "Entertainment"]
+        },
+
+        {
+            "name": "Meditieren",
+            "id" : 21,
+            "time" : 15,
+            "categories" : ["Sport", "Langeweile"]
+        },
+
+        {
+            "name": "Instagram, Facebook und Co",
+            "id" : 22,
+            "time" : 25,
+            "categories" : ["Sport", "Entertainment", "Langeweile"]
+        },
+
+        {
+            "name": "Basteln mit den Kindern",
+            "id" : 23,
+            "time" : 60,
+            "categories" : ["Familie", "Sozialleben"]
+        },
+
+        {
+            "name": "Ruf alte Freunde an",
+            "id" : 24,
+            "time" : 30,
+            "categories" : ["Familie", "Sozialleben"]
+        },
+
+        {
+            "name": "Abwaschen",
+            "id" : 25,
+            "time" : 20,
+            "categories" : ["Haushalt"]
+        },
+
+        {
+            "name": "Alkoholfreie Cocktails mixen",
+            "id" : 26,
+            "time" : 15,
+            "categories" : ["Kochen"]
+        },
+
+        {
+            "name": "Kuchen backen",
+            "id" : 27,
+            "time" : 60,
+            "categories" : ["Kochen"]
+        },
+
+        {
+            "name": "Die nächste Reise planen",
+            "id" : 28,
+            "time" : 40,
+            "categories" : ["Familie", "Sozialleben"]
+        },
+
+        {
+            "name": "Musik hören",
+            "id" : 29,
+            "time" : 15,
+            "categories" : ["Entertainment"]
+        },
+
+        {
+            "name": "Wäsche waschen",
+            "id" : 30,
+            "time" : 30,
+            "categories" : ["Haushalt"]
+        },
+
+        {
+            "name": "Fotos anschauen",
+            "id" : 31,
+            "time" : 15,
+            "categories" : ["Familie", "Sozialleben", "Langeweile"]
+        },
+
+        {
+            "name": "Fenster putzen",
+            "id" : 32,
+            "time" : 60,
+            "categories" : ["Haushalt"]
+        },
+
+        {
+            "name": "Wasserhähne entkalken",
+            "id" : 33,
+            "time" : 30,
+            "categories" : ["Haushalt"]
+        },
+
+        {
+            "name": "Nudelgerichte kochen",
+            "id" : 34,
+            "time" : 30,
+            "categories" : ["Kochen"]
         }
     ]
 }
