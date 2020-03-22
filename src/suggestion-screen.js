@@ -18,6 +18,15 @@ class SuggestionScreen extends PolymerElement {
         iron-icon {
           color: white;
         }
+        .choose-suggestion-title {
+          width: 80%;
+          color: white;
+          font-size: 20px;
+          text-align: center;
+          position: absolute;
+          top: 11px;
+          left: 37px;
+        }
         .suggestions-container {
           position: absolute;
           top: 50%;
@@ -38,6 +47,7 @@ class SuggestionScreen extends PolymerElement {
       </style>
 
       <iron-icon icon="arrow-back" class="back-btn" on-click="_dispatchBackClickedEvent"></iron-icon>
+      <div class="choose-suggestion-title">Wählen Sie einen Vorschlag</div>
       <div class="suggestions-container">
         <dom-repeat items="{{suggestions}}">
           <template>
