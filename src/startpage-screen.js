@@ -44,7 +44,7 @@ class StartpageScreen extends PolymerElement {
           --paper-checkbox-checked-color: var(--paper-green-500);
           --paper-checkbox-checked-ink-color: rgba(0, 0, 0, 0);
           --paper-checkbox-unchecked-color: var(--paper-green-900);
-          --paper-checkbox-unchecked-ink-color: var(--paper-green-900);
+          --paper-checkbox-unchecked-ink-color: rgba(0, 0, 0, 0);
           --paper-checkbox-label-color: var(--paper-green-700);
           --paper-checkbox-label-spacing: 0;
           --paper-checkbox-margin: 8px 16px 8px 0;
