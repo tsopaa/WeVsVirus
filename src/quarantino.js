@@ -147,7 +147,7 @@ class Quarantino extends PolymerElement {
 
   ready() {
     super.ready();
-
+    this.$.healthBar.addEventListener("help-clicked", this._showHintScreen.bind(this));
     this.$.hintScreen.addEventListener("hint-clicked", this._showStartPageScreen.bind(this));
     this.$.startpageScreen.addEventListener("random-btn-clicked", evt => {
       this._showSuggestions();
@@ -277,7 +277,7 @@ class Quarantino extends PolymerElement {
     this.$.suggestionScreen.style.display = "none";
     this.$.timerScreen.style.display = "none";
     this.$.toolbarTitle.style.display = "none";
-    this.$.healthBar.style.display = "none";
+    this.$.healthBar.style.display = "block";
   }
 
   _showHintScreen() {
@@ -288,6 +288,7 @@ class Quarantino extends PolymerElement {
     this.$.suggestionScreen.style.display = "none";
     this.$.timerScreen.style.display = "none";
     this.$.toolbarTitle.style.display = "block";
+    this.$.healthBar.style.display = "none";
   }
 
   _setSuggestions() {

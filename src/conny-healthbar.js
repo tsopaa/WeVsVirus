@@ -1,5 +1,7 @@
 import { PolymerElement, html } from "@polymer/polymer/polymer-element.js";
 
+import "@polymer/iron-icons/iron-icons.js";
+
 class ConnyHealthbar extends PolymerElement {
   static get is() {
     return "conny-healthbar";
@@ -45,6 +47,24 @@ class ConnyHealthbar extends PolymerElement {
           top: -4px;
           color: white;
         }
+        iron-icon {
+          color: white;
+          height: 40px;
+          width: 40px;
+          position: absolute;
+          top: 12px;
+          right: 44px;
+        }
+        @media (max-width: 700px) {
+          iron-icon {
+            height: 30px;
+            width: 30px;
+            top: 16px;
+          }
+          .progress-container {
+            width: calc(90% - 135px);
+          }
+        }
       </style>
       <img id="connyImg" class="conny" src="res/conny.png" />
       <div class="progress-container">
@@ -53,6 +73,7 @@ class ConnyHealthbar extends PolymerElement {
           <div class="numbers">[[health]]/100</div>
         </div>
       </div>
+      <iron-icon icon="help-outline" on-click="_helpClicked"></iron-icon>
     `;
   }
 
@@ -68,6 +89,10 @@ class ConnyHealthbar extends PolymerElement {
 
   ready() {
     super.ready();
+  }
+
+  _helpClicked() {
+    this.dispatchEvent(new CustomEvent("help-clicked"));
   }
 
   _healthChanged() {
