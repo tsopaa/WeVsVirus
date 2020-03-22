@@ -193,6 +193,7 @@ class Quarantino extends PolymerElement {
     this.$.suggestionScreen.addEventListener("item-clicked", evt => {
       this.$.timerScreen.time = evt.detail.time;
       this.$.timerScreen.title = evt.detail.name;
+      this.$.timerScreen.description = evt.detail.description;
       this._showTimerScreen();
     });
   }

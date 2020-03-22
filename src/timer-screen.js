@@ -18,54 +18,93 @@ class TimerScreen extends PolymerElement {
         iron-icon {
           color: white;
         }
-        .top-text-container {
-          width: 100%;
-          text-align: center;
+        .timer-container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          height: 100%;
         }
-        .title {
-          margin-top: 100px;
-          font-size: 30px;
+        .top-text-container {
+          padding: 10px;
+          display: flex;
+          align-items: center;
+          flex-direction: column;
         }
         .timer {
-          font-size: 60px;
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
+          display: flex;
+          justify-content: center;
+          font-size: 50px;
+        }
+        .timer-controls {
+          display: flex;
+          justify-content: center;
+        }
+        .title {
+          font-size: 30px;
+        }
+        .description {
+          color: grey;
+          font-size: 20px;
+        }
+        .duration {
+          float: right;
         }
         .play-pause {
           width: 80px;
           height: 80px;
-          position: absolute;
-          bottom: 100px;
-          left: 50%;
-          transform: translateX(-50%);
         }
         .reset {
-          width: 30px;
-          height: 30px;
-          position: absolute;
-          bottom: 125px;
-          left: 70%;
-          transform: translateX(-50%);
+          margin-top: 10px;
+          width: 60px;
+          height: 60px;
         }
+        .grid-container {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          grid-template-rows: 1fr 1fr 1fr;
+          grid-template-areas: "timer-container timer-container" "timer-container timer-container" "timer-container timer-container";
+        }
+        .timer-container {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          grid-template-rows: 1fr 1.5fr 0.5fr;
+          grid-template-areas: "top-text-container top-text-container" "timer timer" "timer-controls timer-controls";
+          grid-area: timer-container;
+        }
+        .top-text-container { grid-area: top-text-container; }
+        .timer { grid-area: timer; }
+        .timer-controls { grid-area: timer-controls; }
       </style>
       <iron-icon icon="arrow-back" class="back-btn" on-click="_backClicked"></iron-icon>
-      <div class="top-text-container">
-        <div class="title">[[title]]</div>
-        [[time]] min
-      </div>
-      <div id="timer" class="timer">[[currentTimerTime]]</div>
+      <div class="grid-container">
+        <div class="timer-container">
+          <div class="top-text-container">
+          <div class="top-text-content">
+            <div class="title">[[title]]
+              <div class="duration">
+                [[time]]'<iron-icon icon="image:timer" id="time-icon" on-click="_dispatchBackClickedEvent"></iron-icon>
+              </div>
+            </div>
+              <div class="description">[[description]]</div>
+            </div>
+          </div>
 
-      <iron-icon id="pauseBtn" class="play-pause" icon="av:pause" on-click="_pause"></iron-icon>
-      <iron-icon
-        id="playBtn"
-        class="play-pause"
-        icon="av:play-arrow"
-        on-click="_play"
-        style="display: none;"
-      ></iron-icon>
-      <iron-icon id="resetBtn" class="reset" icon="av:replay" on-click="_reset"></iron-icon>
+          <div class="timer" id="timer">[[currentTimerTime]]</div>
+
+          <div class="timer-controls">
+            <iron-icon id="pauseBtn" class="play-pause" icon="av:pause" on-click="_pause"></iron-icon>
+            <iron-icon
+              id="playBtn"
+              class="play-pause"
+              icon="av:play-arrow"
+              on-click="_play"
+              style="display: none;"
+            ></iron-icon>
+            <iron-icon id="resetBtn" class="reset" icon="av:replay" on-click="_reset"></iron-icon>
+          </div>
+        </div>
+      </div>
     `;
   }
 

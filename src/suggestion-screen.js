@@ -88,7 +88,8 @@ class SuggestionScreen extends PolymerElement {
         detail: {
           id: suggestion.id,
           name: suggestion.name,
-          time: suggestion.time
+          time: suggestion.time,
+          description: suggestion.description
         }
       })
     );
