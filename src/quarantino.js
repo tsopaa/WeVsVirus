@@ -52,6 +52,12 @@ class Quarantino extends PolymerElement {
           background-color: black;
           z-index: 1;
         }
+        #toolbarTitle {
+          color: white;
+          position: relative;
+          left: 50%;
+          transform: translateX(-50%);
+        }
       </style>
 
       <iron-ajax
@@ -64,7 +70,10 @@ class Quarantino extends PolymerElement {
       <app-location route="{{route}}" url-space-regex="^[[rootPath]]"> </app-location>
 
       <app-route route="{{route}}" pattern="[[rootPath]]:page" data="{{routeData}}" tail="{{subroute}}"> </app-route>
-      <app-toolbar><conny-healthbar health="{{health}}"></conny-healthbar></app-toolbar>
+      <app-toolbar>
+        <div id="toolbarTitle">Quarantin0</div>
+        <conny-healthbar id="healthBar" health="{{health}}" style="display: none;"></conny-healthbar>
+      </app-toolbar>
           <div id="screen" class="screen">
             <hint-screen id="hintScreen"></hint-screen>
             <startpage-screen id="startpageScreen" categories="[[categories]]" suggestions="[[suggestions]]" style="display: none;"></startpage-screen>
@@ -184,6 +193,8 @@ class Quarantino extends PolymerElement {
     this.$.startpageScreen.style.display = "none";
     this.$.suggestionScreen.style.display = "none";
     this.$.customSuggestionScreen.style.display = "none";
+    this.$.toolbarTitle.style.display = "none";
+    this.$.healthBar.style.display = "block";
   }
 
   _showTimerScreen() {
@@ -194,6 +205,8 @@ class Quarantino extends PolymerElement {
     this.$.startpageScreen.style.display = "none";
     this.$.suggestionScreen.style.display = "none";
     this.$.customSuggestionScreen.style.display = "none";
+    this.$.toolbarTitle.style.display = "none";
+    this.$.healthBar.style.display = "block";
   }
 
   _showSuggestionScreen() {
@@ -203,6 +216,8 @@ class Quarantino extends PolymerElement {
     this.$.startpageScreen.style.display = "none";
     this.$.timerScreen.style.display = "none";
     this.$.customSuggestionScreen.style.display = "none";
+    this.$.toolbarTitle.style.display = "none";
+    this.$.healthBar.style.display = "block";
   }
 
   _showStartPageScreen() {
@@ -212,6 +227,8 @@ class Quarantino extends PolymerElement {
     this.$.suggestionScreen.style.display = "none";
     this.$.timerScreen.style.display = "none";
     this.$.customSuggestionScreen.style.display = "none";
+    this.$.toolbarTitle.style.display = "none";
+    this.$.healthBar.style.display = "block";
   }
 
   _showCustomSuggestionScreen() {
@@ -221,6 +238,8 @@ class Quarantino extends PolymerElement {
     this.$.startpageScreen.style.display = "none";
     this.$.suggestionScreen.style.display = "none";
     this.$.timerScreen.style.display = "none";
+    this.$.toolbarTitle.style.display = "none";
+    this.$.healthBar.style.display = "none";
   }
 
   _showHintScreen() {
@@ -230,6 +249,7 @@ class Quarantino extends PolymerElement {
     this.$.startpageScreen.style.display = "none";
     this.$.suggestionScreen.style.display = "none";
     this.$.timerScreen.style.display = "none";
+    this.$.toolbarTitle.style.display = "block";
   }
 
   _setSuggestions() {
