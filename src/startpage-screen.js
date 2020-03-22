@@ -136,8 +136,8 @@ class StartpageScreen extends PolymerElement {
           </div>
         </div>
       </div>
-      <iron-icon icon="add-circle" id="add-suggestion-button" on-click="_addSuggestionClicked"></iron-icon>
-      `;
+      <!-- <iron-icon icon="add-circle" id="add-suggestion-button" on-click="_addSuggestionClicked"></iron-icon> -->
+    `;
   }
 
   static get properties() {
@@ -158,9 +158,7 @@ class StartpageScreen extends PolymerElement {
   }
 
   _addSuggestionClicked() {
-    this.dispatchEvent(
-      new CustomEvent("show-add-suggestion")
-    );
+    this.dispatchEvent(new CustomEvent("show-add-suggestion"));
   }
 
   _checkboxClicked(evt) {
