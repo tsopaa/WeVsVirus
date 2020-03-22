@@ -5,6 +5,9 @@ import "@polymer/app-route/app-route.js";
 import "@polymer/paper-button/paper-button.js";
 import "@polymer/iron-ajax/iron-ajax.js";
 import "@polymer/app-layout/app-toolbar/app-toolbar.js";
+import "@polymer/app-layout/app-drawer/app-drawer.js";
+import "@polymer/app-layout/app-drawer-layout/app-drawer-layout.js";
+import "@polymer/paper-icon-button/paper-icon-button.js";
 
 import { store } from "./store.js";
 import { updateAccessible } from "./actions/app.js";
@@ -39,13 +42,11 @@ class Quarantino extends PolymerElement {
           display: block;
         }
         .screen {
-          position: absolute;
-          top: 64px;
-          left: 0;
-          right: 0;
-          bottom: 0;
+          position: relative;
+          margin-top: 64px;
         }
         app-toolbar {
+          top: 0;
           position: fixed;
           width: 100%;
           border-bottom: 1px solid white;
@@ -53,10 +54,16 @@ class Quarantino extends PolymerElement {
           z-index: 1;
         }
         #toolbarTitle {
+          width: 100%;
+          position: relative;
+        }
+        .title {
           color: white;
           position: relative;
-          left: 50%;
+          left: calc(50% - 40px);
           transform: translateX(-50%);
+          display: inline-block;
+          font-size: 26px;
         }
       </style>
 
@@ -70,20 +77,42 @@ class Quarantino extends PolymerElement {
       <app-location route="{{route}}" url-space-regex="^[[rootPath]]"> </app-location>
 
       <app-route route="{{route}}" pattern="[[rootPath]]:page" data="{{routeData}}" tail="{{subroute}}"> </app-route>
-      <app-toolbar>
-        <div id="toolbarTitle">Quarantin0</div>
-        <conny-healthbar id="healthBar" health="{{health}}" style="display: none;"></conny-healthbar>
-      </app-toolbar>
-          <div id="screen" class="screen">
-            <hint-screen id="hintScreen"></hint-screen>
-            <startpage-screen id="startpageScreen" categories="[[categories]]" suggestions="[[suggestions]]" style="display: none;"></startpage-screen>
-            <suggestion-screen id="suggestionScreen" suggestions="[[filteredSuggestions]]" style="display: none;">
-            </suggestion-screen>
-            <timer-screen id="timerScreen" health="{{health}}" style="display: none;"></timer-screen>
-            <custom-suggestion id="customSuggestionScreen" style="display: none;"></custom-suggestion>
-            <end-screen id="endScreen" health="[[health]]" style="display: none;"></end-screen>
-          </div> </app-toolbar
-      ></app-toolbar>
+      <app-drawer-layout force-narrow>
+        <app-drawer id="drawer">
+          Ich bin ein drawer
+        </app-drawer>
+        <app-toolbar>
+          <div id="toolbarTitle">
+            <paper-icon-button
+              icon="menu"
+              drawer-toggle
+              style="color: white;"
+              on-click="_openDrawer"
+            ></paper-icon-button>
+            <div class="title" main-title="">Quarantin0</div>
+          </div>
+          <conny-healthbar id="healthBar" health="{{health}}" style="display: none;"></conny-healthbar>
+        </app-toolbar>
+        <div id="screen" class="screen">
+          <hint-screen id="hintScreen" class="screen"></hint-screen>
+          <startpage-screen
+            id="startpageScreen"
+            categories="[[categories]]"
+            suggestions="[[suggestions]]"
+            style="display: none;"
+          ></startpage-screen>
+          <suggestion-screen
+            id="suggestionScreen"
+            class="screen"
+            suggestions="[[filteredSuggestions]]"
+            style="display: none;"
+          >
+          </suggestion-screen>
+          <timer-screen id="timerScreen" health="{{health}}" style="display: none;"></timer-screen>
+          <custom-suggestion id="customSuggestionScreen" style="display: none;"></custom-suggestion>
+          <end-screen id="endScreen" health="[[health]]" style="display: none;"></end-screen>
+        </div>
+      </app-drawer-layout>
     `;
   }
 
@@ -165,6 +194,14 @@ class Quarantino extends PolymerElement {
       this.$.timerScreen.title = evt.detail.name;
       this._showTimerScreen();
     });
+  }
+
+  _openDrawer() {
+    if (this.$.drawer.opened) {
+      this.$.drawer.close();
+    } else {
+      this.$.drawer.open();
+    }
   }
 
   _showSuggestions() {

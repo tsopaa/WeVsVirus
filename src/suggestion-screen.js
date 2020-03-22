@@ -28,12 +28,10 @@ class SuggestionScreen extends PolymerElement {
           left: 37px;
         }
         .suggestions-container {
-          position: absolute;
-          top: 50%;
+          position: relative;
           left: 50%;
-          transform: translate(-50%, -50%);
+          transform: translateX(-50%);
           width: 80%;
-          height: 80%;
           color: white;
         }
         #suggestion-divider {

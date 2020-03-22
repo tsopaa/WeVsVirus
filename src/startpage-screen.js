@@ -28,7 +28,7 @@ class StartpageScreen extends PolymerElement {
           font-size: 26px;
           text-align: center;
           color: white;
-          margin: 20% 10% 10% 10%;
+          margin: 100px 10% 10% 10%;
         }
 
         #add-suggestion-button {
