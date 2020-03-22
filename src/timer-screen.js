@@ -128,6 +128,7 @@ class TimerScreen extends PolymerElement {
   startTimer() {
     if (this.time > 0) {
       this.timer.start({ countdown: true, startValues: { seconds: this.time } });
+      this.set("currentTimerTime", this.timer.getTimeValues().toString());
       this.timer.addEventListener("secondsUpdated", () => {
         this.set("currentTimerTime", this.timer.getTimeValues().toString());
       });
