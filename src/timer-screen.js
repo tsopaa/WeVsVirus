@@ -74,20 +74,31 @@ class TimerScreen extends PolymerElement {
           grid-template-areas: "top-text-container top-text-container" "timer timer" "timer-controls timer-controls";
           grid-area: timer-container;
         }
-        .top-text-container { grid-area: top-text-container; }
-        .timer { grid-area: timer; }
-        .timer-controls { grid-area: timer-controls; }
+        .top-text-container {
+          grid-area: top-text-container;
+        }
+        .timer {
+          grid-area: timer;
+        }
+        .timer-controls {
+          grid-area: timer-controls;
+        }
       </style>
       <iron-icon icon="arrow-back" class="back-btn" on-click="_backClicked"></iron-icon>
       <div class="grid-container">
         <div class="timer-container">
           <div class="top-text-container">
-          <div class="top-text-content">
-            <div class="title">[[title]]
-              <div class="duration">
-                [[time]]'<iron-icon icon="image:timer" id="time-icon" on-click="_dispatchBackClickedEvent"></iron-icon>
+            <div class="top-text-content">
+              <div class="title">
+                [[title]]
+                <div class="duration">
+                  [[time]]'<iron-icon
+                    icon="image:timer"
+                    id="time-icon"
+                    on-click="_dispatchBackClickedEvent"
+                  ></iron-icon>
+                </div>
               </div>
-            </div>
               <div class="description">[[description]]</div>
             </div>
           </div>
@@ -163,12 +174,12 @@ class TimerScreen extends PolymerElement {
 
   _reset() {
     this.timer.stop();
-    this.timer.start({ countdown: true, startValues: { seconds: this.time } });
+    this.timer.start({ countdown: true, startValues: { minutes: this.time } });
   }
 
   startTimer() {
     if (this.time > 0) {
-      this.timer.start({ countdown: true, startValues: { seconds: this.time } });
+      this.timer.start({ countdown: true, startValues: { minutes: this.time } });
       this.set("currentTimerTime", this.timer.getTimeValues().toString());
       this.timer.addEventListener("secondsUpdated", () => {
         this.set("currentTimerTime", this.timer.getTimeValues().toString());
