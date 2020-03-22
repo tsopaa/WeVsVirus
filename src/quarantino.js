@@ -44,6 +44,7 @@ class Quarantino extends PolymerElement {
         .screen {
           position: relative;
           margin-top: 64px;
+          max-width: 100%;
         }
         app-toolbar {
           top: 0;
@@ -197,11 +198,11 @@ class Quarantino extends PolymerElement {
   }
 
   _openDrawer() {
-    if (this.$.drawer.opened) {
-      this.$.drawer.close();
-    } else {
-      this.$.drawer.open();
-    }
+    // if (this.$.drawer.opened) {
+    //   this.$.drawer.close();
+    // } else {
+    //   this.$.drawer.open();
+    // }
   }
 
   _showSuggestions() {
