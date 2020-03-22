@@ -18,17 +18,19 @@ class StartpageScreen extends PolymerElement {
           background-color: darkgreen;
           color: white;
           position: relative;
-          width: 40%;
-          margin-left: 30%;
+          width: 300px;
+          font-size: 22px;
+          left: 50%;
+          transform: translateX(-50%);
         }
 
         .text-container {
           position: relative;
           width: 80%;
-          font-size: 26px;
+          font-size: 32px;
           text-align: center;
           color: white;
-          margin: 100px 10% 10% 10%;
+          margin: 120px 10% 60px 10%;
         }
 
         #add-suggestion-button {
@@ -74,37 +76,36 @@ class StartpageScreen extends PolymerElement {
 
         .checkbox-container {
           position: relative;
-          width: 90%;
-          margin: 5% 0 0 5%;
-          font-size: 18px;
-        }
-
-        .conny-img {
-          height: 380px;
-          width: 380px;
-          /* position: absolute; */
-
-          bottom: 10px;
-          right: -80px;
-        }
-        .start-text {
-          color: white;
+          width: 500px;
+          left: 50%;
+          transform: translateX(-50%);
+          margin-top: 50px;
           font-size: 20px;
-          text-align: left;
-        }
-        .start-text--top {
-          width: 90%;
-          margin: 10% 5% 5% 5%;
-        }
-        .start-text--bottom {
-          margin: 5% 5% 5% 5%;
-          width: 90%;
         }
 
         @media (max-width: 700px) {
           .random-btn {
             width: 80%;
             margin-left: 10%;
+            left: 0;
+            transform: translateX(0);
+          }
+
+          .text-container {
+            position: relative;
+            width: 80%;
+            font-size: 26px;
+            text-align: center;
+            color: white;
+            margin: 100px 10% 10% 10%;
+          }
+          .checkbox-container {
+            position: relative;
+            width: 90%;
+            margin: 10% 0 0 5%;
+            font-size: 18px;
+            left: 0;
+            transform: translateX(0);
           }
         }
       </style>
