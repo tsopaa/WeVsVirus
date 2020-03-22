@@ -14,6 +14,7 @@ import "./suggestion-screen.js";
 import "./timer-screen.js";
 import "./conny-healthbar.js";
 import "./end-screen.js";
+import "./custom-suggestion.js";
 
 // Gesture events like tap and track generated from touch will not be
 // preventable, allowing for better scrolling performance.
@@ -68,6 +69,7 @@ class Quarantino extends PolymerElement {
             <suggestion-screen id="suggestionScreen" suggestions="[[filteredSuggestions]]" style="display: none;">
             </suggestion-screen>
             <timer-screen id="timerScreen" health="{{health}}" style="display: none;"></timer-screen>
+            <custom-suggestion id="customSuggestionScreen" style="display: none;"></custom-suggestion>
             <end-screen id="endScreen" health="[[health]]" style="display: none;"></end-screen>
           </div> </app-toolbar
       ></app-toolbar>
@@ -120,6 +122,16 @@ class Quarantino extends PolymerElement {
         this.checkedCategories.filter(el => el !== evt.detail.name)
       );
     });
+
+    this.$.startpageScreen.addEventListener("show-add-suggestion", evt => {
+   this._showCustomSuggestionScreen();
+    });
+    this.$.customSuggestionScreen.addEventListener("add-suggestion", evt => {
+      this.set(
+        "suggestions",[...this.suggestions, { id: this.suggestions.length+1, name: evt.detail.title, time: evt.detail.time, description: evt.detail.description}]
+      );
+    });
+
     this.$.timerScreen.addEventListener("timer-finished", () => {
       this._showEndScreen();
     });
@@ -160,28 +172,41 @@ class Quarantino extends PolymerElement {
     this.$.timerScreen.style.display = "none";
     this.$.startpageScreen.style.display = "none";
     this.$.suggestionScreen.style.display = "none";
+    this.$.customSuggestionScreen.style.display = "none";
   }
 
   _showTimerScreen() {
+    this.$.timerScreen.style.display = "block";
     this.$.endScreen.style.display = "none";
     this.$.startpageScreen.style.display = "none";
     this.$.suggestionScreen.style.display = "none";
-    this.$.timerScreen.style.display = "block";
+    this.$.customSuggestionScreen.style.display = "none";
   }
 
   _showSuggestionScreen() {
+    this.$.suggestionScreen.style.display = "block";
     this.$.endScreen.style.display = "none";
     this.$.startpageScreen.style.display = "none";
-    this.$.suggestionScreen.style.display = "block";
     this.$.timerScreen.style.display = "none";
+    this.$.customSuggestionScreen.style.display = "none";
   }
 
   _showStartPageScreen() {
-    this.$.endScreen.style.display = "none";
     this.$.startpageScreen.style.display = "block";
+    this.$.endScreen.style.display = "none";
+    this.$.suggestionScreen.style.display = "none";
+    this.$.timerScreen.style.display = "none";
+    this.$.customSuggestionScreen.style.display = "none";
+  }
+
+  _showCustomSuggestionScreen() {
+    this.$.customSuggestionScreen.style.display = "block";
+    this.$.endScreen.style.display = "none";
+    this.$.startpageScreen.style.display = "none";
     this.$.suggestionScreen.style.display = "none";
     this.$.timerScreen.style.display = "none";
   }
+
   _setSuggestions() {
     if (this.$.suggestionsReader.lastResponse && this.$.suggestionsReader.lastResponse.suggestions)
       this.suggestions = this.$.suggestionsReader.lastResponse.suggestions;

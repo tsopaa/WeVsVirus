@@ -1,6 +1,7 @@
 import { PolymerElement, html } from "@polymer/polymer/polymer-element.js";
 
 import "@polymer/paper-checkbox/paper-checkbox.js";
+import "@polymer/iron-icons/iron-icons.js";
 
 class StartpageScreen extends PolymerElement {
   static get is() {
@@ -28,6 +29,10 @@ class StartpageScreen extends PolymerElement {
           text-align: center;
           color: white;
           margin: 20% 10% 10% 10%;
+        }
+
+        #add-suggestion-button {
+          color: #009999;
         }
 
         .checkBox {
@@ -131,7 +136,8 @@ class StartpageScreen extends PolymerElement {
           </div>
         </div>
       </div>
-    `;
+      <iron-icon icon="add-circle" id="add-suggestion-button" on-click="_addSuggestionClicked"></iron-icon>
+      `;
   }
 
   static get properties() {
@@ -149,6 +155,12 @@ class StartpageScreen extends PolymerElement {
   _hideStartHint() {
     this.$.startHint.style.display = "none";
     this.$.startpage.style.display = " block";
+  }
+
+  _addSuggestionClicked() {
+    this.dispatchEvent(
+      new CustomEvent("show-add-suggestion")
+    );
   }
 
   _checkboxClicked(evt) {
