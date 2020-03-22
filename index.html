@@ -3,19 +3,40 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes" />
-    <title>app</title>
+    <title>Quarantin0</title>
     <base href="/" />
     <script>
-      window.MyAppGlobals = { rootPath: "/" };
+      window.AppGlobals = {
+        rootPath: "/" ,
+        windowVisible: true
+      };
     </script>
+
+    <link rel="manifest" href="manifest.json" />
+    <link rel="icon" href="res/favicon.ico" />
+    <meta name="theme-color" content="#000" />
+    <!-- Add to homescreen for Chrome on Android. Fallback for manifest.json -->
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="application-name" content="Quarantin0" />
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Quarantin0" />
+    <!-- Homescreen icons -->
+    <link rel="apple-touch-icon" href="res/manifest/icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="res/manifest/icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="96x96" href="res/manifest/icon-96x96.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="res/manifest/icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="192x192" href="res/manifest/icon-192x192.png" />
     <!-- Load webcomponents-loader.js to check and load any polyfills your browser needs -->
     <script src="node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js"></script>
+    <script src="res/easytimer.min.js"></script>
     <script
       type="text/javascript"
       src="node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js"
     ></script>
     <!-- Load your application shell -->
-    <script type="module" src="src/my-app.js"></script>
+    <script type="module" src="src/quarantino.js"></script>
     <!-- Add any global styles for body, document, etc. -->
     <style>
       body {
@@ -23,14 +44,49 @@
         font-family: "Roboto", "Noto", sans-serif;
         line-height: 1.5;
         min-height: 100vh;
-        background-color: #fff;
+        background-color: #000;
       }
     </style>
   </head>
 
   <body>
-    <my-app></my-app>
+    <quarantino-app></quarantino-app>
     <script>
+
+        if ("serviceWorker" in navigator) {
+        window.addEventListener("load", function() {
+          navigator.serviceWorker.register("service-worker.js", {
+            scope: AppGlobals.rootPath
+          });
+        });
+      }
+
+      Notification.requestPermission(function(status) {
+    console.log('Notification permission status', status)
+      });
+
+      var hidden, visibilityChange; 
+if (typeof document.hidden !== "undefined") { // Opera 12.10 and Firefox 18 and later support 
+  hidden = "hidden";
+  visibilityChange = "visibilitychange";
+} else if (typeof document.msHidden !== "undefined") {
+  hidden = "msHidden";
+  visibilityChange = "msvisibilitychange";
+} else if (typeof document.webkitHidden !== "undefined") {
+  hidden = "webkitHidden";
+  visibilityChange = "webkitvisibilitychange";
+}
+
+function handleVisibilityChange() {
+  if (document[hidden]) {
+    window.AppGlobals.windowVisible = false;
+  } else {
+    window.AppGlobals.windowVisible = true;
+  }
+}
+
+ document.addEventListener(visibilityChange, handleVisibilityChange, false);
+
       // HACK(keanulee): The Redux package assumes `process` exists - mock it here before
       // the module is loaded.
       window.process = {
