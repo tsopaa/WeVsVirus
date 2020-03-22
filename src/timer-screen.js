@@ -96,6 +96,14 @@ class TimerScreen extends PolymerElement {
     this.timer.addEventListener("targetAchieved", () => {
       this.set("health", this.health - this.time);
       this.dispatchEvent(new CustomEvent("timer-finished"));
+      if (Notification.permission == "granted") {
+        navigator.serviceWorker.getRegistration().then(reg => {
+          var options = {
+            icon: "res/conny.png"
+          };
+          reg.showNotification("Dein Timer für " + this.title + " ist abgelaufen!", options);
+        });
+      }
     });
   }
 

@@ -31,8 +31,9 @@ class EndScreen extends PolymerElement {
           background-color: darkgreen;
           color: white;
           position: relative;
-          width: 40%;
-          margin-left: 30%;
+          width: 170px;
+          left: 50%;
+          transform: translateX(-50%);
         }
       </style>
 

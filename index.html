@@ -58,6 +58,10 @@
         });
       }
 
+      Notification.requestPermission(function(status) {
+    console.log('Notification permission status', status)
+      });
+
       // HACK(keanulee): The Redux package assumes `process` exists - mock it here before
       // the module is loaded.
       window.process = {
