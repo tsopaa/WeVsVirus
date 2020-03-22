@@ -117,7 +117,7 @@ class StartpageScreen extends PolymerElement {
         <div class="text-container">
           Deine täglichen Quarantäne-Vorschläge
         </div>
-        <paper-button class="random-btn" on-click="_dispatchRandomBtnClickedEvent">Random</paper-button>
+        <paper-button class="random-btn" on-click="_dispatchRandomBtnClickedEvent">Los Gehts</paper-button>
         <div class="checkbox-container">
           <div class="inner-checkbox-container">
             <dom-repeat items="{{categories}}" as="category">

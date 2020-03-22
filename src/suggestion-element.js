@@ -4,7 +4,7 @@ import {
 } from "@polymer/polymer/polymer-element.js";
 
 import "@polymer/iron-icons/iron-icons.js";
-import "@polymer/iron-icons/av-icons.js";
+import "@polymer/iron-icons/image-icons.js";
 
 
 class SuggestionElement extends PolymerElement {
@@ -17,9 +17,9 @@ class SuggestionElement extends PolymerElement {
         :host {
           display: block;
         }
-        h2 {
-          margin-top: 5px;
-          margin-bottom: 5px;
+        h3 {
+          margin-top: 7px;
+          margin-bottom: 7px;
         }
         .card-actions{
           margin-top: 2px;
@@ -31,6 +31,9 @@ class SuggestionElement extends PolymerElement {
         #card-title{
           width: 70%;
         }
+        #time-icon {
+          margin-top: -2px;
+        }
         .oneline {
           display: inline-block;
         }
@@ -41,17 +44,13 @@ class SuggestionElement extends PolymerElement {
           <div class="card-content">
           <div id="titlebar">
             <div class="oneline" id="card-title">
-              <h2 >[[title]]</h2>
+              <h3>[[title]]</h3>
             </div>
             <div class="oneline" id="indicator">
-              <iron-icon icon="av:av-timer" on-click="_dispatchBackClickedEvent"></iron-icon> 300
+            [[time]]'<iron-icon icon="image:timer" id="time-icon" on-click="_dispatchBackClickedEvent"></iron-icon>
             </div>
           </div>
-            
             [[description]]
-          </div>
-          <div class="card-actions">
-            
           </div>
         </paper-card>
     `;

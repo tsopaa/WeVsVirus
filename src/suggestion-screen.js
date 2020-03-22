@@ -1,4 +1,7 @@
-import { PolymerElement, html } from "@polymer/polymer/polymer-element.js";
+import {
+  PolymerElement,
+  html
+} from "@polymer/polymer/polymer-element.js";
 
 import "@polymer/iron-icons/iron-icons.js";
 
@@ -9,7 +12,7 @@ class SuggestionScreen extends PolymerElement {
     return "suggestion-screen";
   }
   static get template() {
-    return html`
+    return html `
       <style>
         :host {
           display: block;
@@ -26,7 +29,12 @@ class SuggestionScreen extends PolymerElement {
           height: 80%;
           color: white;
         }
-
+        #suggestion-divider {
+          color: white;
+          margin-top: 10px;
+          width: 74%;
+          padding: 0 10%;
+        }
         @media (max-width: 700px) {
         }
       </style>
@@ -40,9 +48,11 @@ class SuggestionScreen extends PolymerElement {
                 id="[[item.id]]"
                 title="[[item.name]]"
                 description="[[item.description]]"
+                time="[[item.time]]"
                 on-click="_dispatchItemClickedEvent"
               ></suggestion-element>
             </div>
+            <hr id="suggestion-divider">
           </template>
         </dom-repeat>
       </div>
