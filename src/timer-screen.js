@@ -73,8 +73,7 @@ class TimerScreen extends PolymerElement {
     return {
       time: {
         type: Number,
-        value: 0,
-        observer: "_timeChanged"
+        value: 0
       },
       currentTimerTime: {
         type: String
@@ -126,7 +125,7 @@ class TimerScreen extends PolymerElement {
     this.timer.start({ countdown: true, startValues: { seconds: this.time } });
   }
 
-  _timeChanged() {
+  startTimer() {
     if (this.time > 0) {
       this.timer.start({ countdown: true, startValues: { seconds: this.time } });
       this.timer.addEventListener("secondsUpdated", () => {

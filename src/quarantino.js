@@ -14,6 +14,7 @@ import "./suggestion-screen.js";
 import "./timer-screen.js";
 import "./conny-healthbar.js";
 import "./end-screen.js";
+import "./hint-screen.js";
 import "./custom-suggestion.js";
 
 // Gesture events like tap and track generated from touch will not be
@@ -65,7 +66,8 @@ class Quarantino extends PolymerElement {
       <app-route route="{{route}}" pattern="[[rootPath]]:page" data="{{routeData}}" tail="{{subroute}}"> </app-route>
       <app-toolbar><conny-healthbar health="{{health}}"></conny-healthbar></app-toolbar>
           <div id="screen" class="screen">
-            <startpage-screen id="startpageScreen" categories="[[categories]]" suggestions="[[suggestions]]"></startpage-screen>
+            <hint-screen id="hintScreen"></hint-screen>
+            <startpage-screen id="startpageScreen" categories="[[categories]]" suggestions="[[suggestions]]" style="display: none;"></startpage-screen>
             <suggestion-screen id="suggestionScreen" suggestions="[[filteredSuggestions]]" style="display: none;">
             </suggestion-screen>
             <timer-screen id="timerScreen" health="{{health}}" style="display: none;"></timer-screen>
@@ -106,6 +108,8 @@ class Quarantino extends PolymerElement {
 
   ready() {
     super.ready();
+
+    this.$.hintScreen.addEventListener("hint-clicked", this._showStartPageScreen.bind(this));
     this.$.startpageScreen.addEventListener("random-btn-clicked", evt => {
       this._showSuggestions();
     });
@@ -124,12 +128,18 @@ class Quarantino extends PolymerElement {
     });
 
     this.$.startpageScreen.addEventListener("show-add-suggestion", evt => {
-   this._showCustomSuggestionScreen();
+      this._showCustomSuggestionScreen();
     });
     this.$.customSuggestionScreen.addEventListener("add-suggestion", evt => {
-      this.set(
-        "suggestions",[...this.suggestions, { id: this.suggestions.length+1, name: evt.detail.title, time: evt.detail.time, description: evt.detail.description}]
-      );
+      this.set("suggestions", [
+        ...this.suggestions,
+        {
+          id: this.suggestions.length + 1,
+          name: evt.detail.title,
+          time: evt.detail.time,
+          description: evt.detail.description
+        }
+      ]);
     });
 
     this.$.timerScreen.addEventListener("timer-finished", () => {
@@ -169,6 +179,7 @@ class Quarantino extends PolymerElement {
 
   _showEndScreen() {
     this.$.endScreen.style.display = "block";
+    this.$.hintScreen.style.display = "none";
     this.$.timerScreen.style.display = "none";
     this.$.startpageScreen.style.display = "none";
     this.$.suggestionScreen.style.display = "none";
@@ -176,7 +187,9 @@ class Quarantino extends PolymerElement {
   }
 
   _showTimerScreen() {
+    this.$.timerScreen.startTimer();
     this.$.timerScreen.style.display = "block";
+    this.$.hintScreen.style.display = "none";
     this.$.endScreen.style.display = "none";
     this.$.startpageScreen.style.display = "none";
     this.$.suggestionScreen.style.display = "none";
@@ -185,6 +198,7 @@ class Quarantino extends PolymerElement {
 
   _showSuggestionScreen() {
     this.$.suggestionScreen.style.display = "block";
+    this.$.hintScreen.style.display = "none";
     this.$.endScreen.style.display = "none";
     this.$.startpageScreen.style.display = "none";
     this.$.timerScreen.style.display = "none";
@@ -193,6 +207,7 @@ class Quarantino extends PolymerElement {
 
   _showStartPageScreen() {
     this.$.startpageScreen.style.display = "block";
+    this.$.hintScreen.style.display = "none";
     this.$.endScreen.style.display = "none";
     this.$.suggestionScreen.style.display = "none";
     this.$.timerScreen.style.display = "none";
@@ -201,6 +216,16 @@ class Quarantino extends PolymerElement {
 
   _showCustomSuggestionScreen() {
     this.$.customSuggestionScreen.style.display = "block";
+    this.$.hintScreen.style.display = "none";
+    this.$.endScreen.style.display = "none";
+    this.$.startpageScreen.style.display = "none";
+    this.$.suggestionScreen.style.display = "none";
+    this.$.timerScreen.style.display = "none";
+  }
+
+  _showHintScreen() {
+    this.$.hintScreen.style.display = "block";
+    this.$.customSuggestionScreen.style.display = "none";
     this.$.endScreen.style.display = "none";
     this.$.startpageScreen.style.display = "none";
     this.$.suggestionScreen.style.display = "none";

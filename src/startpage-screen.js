@@ -108,17 +108,8 @@ class StartpageScreen extends PolymerElement {
           }
         }
       </style>
-      <div id="startHint" on-click="_hideStartHint">
-        <div class="start-text start-text--top">
-          Hilf dabei die Verbreitung des Corona-Virus zu stoppen und bleib Zuhause!
-        </div>
-        <div class="start-text start-text--bottom">
-          Hier sind einige Vorschläge, was du Zuhause alles tun könntest. Und ganz nebenbei kannst du Conny die
-          Corona-Vire bekämpfen.
-        </div>
-        <img class="conny-img" src="res/conny.png" />
-      </div>
-      <div id="startpage" style="display: none;">
+
+      <div id="startpage">
         <div class="text-container">
           Deine täglichen Quarantäne-Vorschläge
         </div>
@@ -150,11 +141,6 @@ class StartpageScreen extends PolymerElement {
 
   ready() {
     super.ready();
-  }
-
-  _hideStartHint() {
-    this.$.startHint.style.display = "none";
-    this.$.startpage.style.display = " block";
   }
 
   _addSuggestionClicked() {
