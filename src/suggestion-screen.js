@@ -39,6 +39,7 @@ class SuggestionScreen extends PolymerElement {
               <suggestion-element
                 id="[[item.id]]"
                 title="[[item.name]]"
+                description="[[item.description]]"
                 on-click="_dispatchItemClickedEvent"
               ></suggestion-element>
             </div>

@@ -1,36 +1,59 @@
-import { PolymerElement, html } from "@polymer/polymer/polymer-element.js";
+import {
+  PolymerElement,
+  html
+} from "@polymer/polymer/polymer-element.js";
+
+import "@polymer/iron-icons/iron-icons.js";
+import "@polymer/iron-icons/av-icons.js";
+
 
 class SuggestionElement extends PolymerElement {
   static get is() {
     return "suggestion-element";
   }
   static get template() {
-    return html`
+    return html `
       <style>
         :host {
           display: block;
         }
-        .suggestion-container {
-          min-height: 50px;
-          border: 1px solid white;
-          width: 100%;
-          position: relative;
+        h2 {
+          margin-top: 5px;
+          margin-bottom: 5px;
         }
-        .suggestion-element {
-          font-size: 22px;
-          color: white;
-          position: absolute;
-          text-align: center;
-          width: 100%;
-          top: 50%;
-          transform: translateY(-50%);
+        .card-actions{
+          margin-top: 2px;
+        }
+        #indicator{
+          width: 20%;
+          text-align: right;
+        }
+        #card-title{
+          width: 70%;
+        }
+        .oneline {
+          display: inline-block;
         }
         @media (max-width: 700px) {
         }
       </style>
-      <div class="suggestion-container">
-        <div class="suggestion-element">[[title]]</div>
-      </div>
+        <paper-card heading="[[title]]" alt="NO TITLE PORVIDED">
+          <div class="card-content">
+          <div id="titlebar">
+            <div class="oneline" id="card-title">
+              <h2 >[[title]]</h2>
+            </div>
+            <div class="oneline" id="indicator">
+              <iron-icon icon="av:av-timer" on-click="_dispatchBackClickedEvent"></iron-icon> 300
+            </div>
+          </div>
+            
+            [[description]]
+          </div>
+          <div class="card-actions">
+            
+          </div>
+        </paper-card>
     `;
   }
 
