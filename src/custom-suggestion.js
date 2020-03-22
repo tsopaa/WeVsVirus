@@ -1,6 +1,6 @@
 import { PolymerElement, html } from "@polymer/polymer/polymer-element.js";
 import "@polymer/paper-button/paper-button.js";
-
+import "./shared-styles.js";
 
 class CustomSuggestion extends PolymerElement {
   static get is() {
@@ -8,7 +8,7 @@ class CustomSuggestion extends PolymerElement {
   }
   static get template() {
     return html`
-      <style>
+      <style include="shared-styles">
         :host {
           display: block;
           color: white;
@@ -16,13 +16,12 @@ class CustomSuggestion extends PolymerElement {
         iron-icon {
           color: white;
         }
-
       </style>
-      <input type="text" name="title" id="title-input" value="{{title}}">
-      <input type="text" name="time" id="time-input">
-      <input type="text" name="description" id="description-input">
+      <input type="text" name="title" id="title-input" value="{{title}}" />
+      <input type="text" name="time" id="time-input" />
+      <input type="text" name="description" id="description-input" />
       <paper-button id="addSuggestionBtn" on-click="_addSuggestionClicked">Hinzufuegen</paper-button>
-      <iron-icon icon="arrow-back" on-click="_backClicked"></iron-icon>
+      <iron-icon icon="arrow-back" class="back-btn" on-click="_backClicked"></iron-icon>
     `;
   }
 

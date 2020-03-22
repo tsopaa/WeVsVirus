@@ -1,4 +1,5 @@
 import { PolymerElement, html } from "@polymer/polymer/polymer-element.js";
+import "./shared-styles.js";
 
 class EndScreen extends PolymerElement {
   static get is() {
@@ -6,7 +7,7 @@ class EndScreen extends PolymerElement {
   }
   static get template() {
     return html`
-      <style>
+      <style include="shared-styles">
         :host {
           display: block;
           color: white;
@@ -35,7 +36,7 @@ class EndScreen extends PolymerElement {
         }
       </style>
 
-      <iron-icon icon="arrow-back" on-click="_backClicked"></iron-icon>
+      <iron-icon icon="arrow-back" class="back-btn" on-click="_backClicked"></iron-icon>
       <div id="dead" style="display: none;">
         <img src="res/conny-dead.png" />
         <div class="text">

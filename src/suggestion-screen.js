@@ -1,19 +1,17 @@
-import {
-  PolymerElement,
-  html
-} from "@polymer/polymer/polymer-element.js";
+import { PolymerElement, html } from "@polymer/polymer/polymer-element.js";
 
 import "@polymer/iron-icons/iron-icons.js";
 
 import "./suggestion-element.js";
+import "./shared-styles.js";
 
 class SuggestionScreen extends PolymerElement {
   static get is() {
     return "suggestion-screen";
   }
   static get template() {
-    return html `
-      <style>
+    return html`
+      <style include="shared-styles">
         :host {
           display: block;
         }
@@ -39,7 +37,7 @@ class SuggestionScreen extends PolymerElement {
         }
       </style>
 
-      <iron-icon icon="arrow-back" on-click="_dispatchBackClickedEvent"></iron-icon>
+      <iron-icon icon="arrow-back" class="back-btn" on-click="_dispatchBackClickedEvent"></iron-icon>
       <div class="suggestions-container">
         <dom-repeat items="{{suggestions}}">
           <template>
@@ -52,7 +50,7 @@ class SuggestionScreen extends PolymerElement {
                 on-click="_dispatchItemClickedEvent"
               ></suggestion-element>
             </div>
-            <hr id="suggestion-divider">
+            <hr id="suggestion-divider" />
           </template>
         </dom-repeat>
       </div>

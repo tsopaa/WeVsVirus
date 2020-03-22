@@ -2,6 +2,7 @@ import { PolymerElement, html } from "@polymer/polymer/polymer-element.js";
 
 import "@polymer/iron-icons/iron-icons.js";
 import "@polymer/iron-icons/av-icons.js";
+import "./shared-styles.js";
 
 class TimerScreen extends PolymerElement {
   static get is() {
@@ -9,7 +10,7 @@ class TimerScreen extends PolymerElement {
   }
   static get template() {
     return html`
-      <style>
+      <style include="shared-styles">
         :host {
           display: block;
           color: white;
@@ -49,7 +50,7 @@ class TimerScreen extends PolymerElement {
           transform: translateX(-50%);
         }
       </style>
-      <iron-icon icon="arrow-back" on-click="_backClicked"></iron-icon>
+      <iron-icon icon="arrow-back" class="back-btn" on-click="_backClicked"></iron-icon>
       <div class="top-text-container">
         <div class="title">[[title]]</div>
         [[time]] min
