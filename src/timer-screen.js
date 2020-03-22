@@ -45,10 +45,12 @@ class TimerScreen extends PolymerElement {
         }
         .description {
           color: grey;
+          max-width: 500px;
           font-size: 20px;
         }
         .duration {
           float: right;
+          padding-left: 10px;
         }
         .play-pause {
           width: 80px;
@@ -68,7 +70,7 @@ class TimerScreen extends PolymerElement {
         .timer-container {
           display: grid;
           grid-template-columns: 1fr 1fr;
-          grid-template-rows: 1fr 1.5fr 0.5fr;
+          grid-template-rows: 2.6fr 0.2fr 0.2fr;
           grid-template-areas: "top-text-container top-text-container" "timer timer" "timer-controls timer-controls";
           grid-area: timer-container;
         }
