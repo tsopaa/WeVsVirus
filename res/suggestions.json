@@ -2,7 +2,7 @@
     "suggestions": [{
             "name": "Staubsaugen",
             "id": 1,
-            "time": 3,
+            "time": 15,
             "description": "Einfach mal den Staubsauger nehmen und tun was man sonst immer nicht wollte",
             "categories": ["Haushalt"]
         },

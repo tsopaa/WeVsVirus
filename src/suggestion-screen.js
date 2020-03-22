@@ -21,7 +21,7 @@ class SuggestionScreen extends PolymerElement {
         .choose-suggestion-title {
           width: 80%;
           color: white;
-          font-size: 20px;
+          font-size: 26px;
           text-align: center;
           position: absolute;
           top: 11px;
@@ -41,6 +41,9 @@ class SuggestionScreen extends PolymerElement {
           padding: 0 10%;
         }
         @media (max-width: 700px) {
+          .choose-suggestion-title {
+            font-size: 20px;
+          }
         }
       </style>
 

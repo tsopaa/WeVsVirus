@@ -18,15 +18,16 @@ class EndScreen extends PolymerElement {
         img {
           width: 300px;
           height: 300px;
-          position: relative;
+          position: absolute;
           left: 50%;
           transform: translateX(-50%);
         }
         .text {
-          font-size: 20px;
+          font-size: 26px;
           margin: 5%;
           text-align: center;
         }
+
         .continue-btn {
           background-color: darkgreen;
           color: white;
@@ -34,6 +35,35 @@ class EndScreen extends PolymerElement {
           width: 170px;
           left: 50%;
           transform: translateX(-50%);
+          margin-top: 320px;
+        }
+        #dead > img {
+          top: 200px;
+        }
+        @media (max-width: 700px) {
+          #dead > img {
+            top: 180px;
+          }
+          .continue-btn {
+            background-color: darkgreen;
+            color: white;
+            position: relative;
+            width: 170px;
+            left: 50%;
+            transform: translateX(-50%);
+          }
+          img {
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+          }
+          .text {
+            font-size: 20px;
+            margin: 5%;
+            text-align: center;
+          }
         }
       </style>
 
