@@ -38,10 +38,10 @@ class HintScreen extends PolymerElement {
 
       <div id="startHint" on-click="_dispatchHintClickedEvent">
         <div class="start-text start-text--top">
-          Hilf dabei die Verbreitung des Corona-Virus zu stoppen und bleib Zuhause!
+          Helfen Sie dabei die Verbreitung des Corona-Virus zu stoppen und bleiben Sie Zuhause!
         </div>
         <div class="start-text start-text--bottom">
-          Hier sind einige Vorschläge, was du Zuhause alles tun könntest. Und ganz nebenbei kannst du Conny die
+          Damit Ihnen genau das erleichtert wird und Ihnen nicht langweilig ist, sind hier einige Vorschläge, was Sie Zuhause alles tun können. Und ganz nebenbei können Sie Conny die
           Corona-Vire bekämpfen.
         </div>
         <img class="conny-img" src="res/conny.png" />

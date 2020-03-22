@@ -41,12 +41,12 @@ class EndScreen extends PolymerElement {
       <div id="dead" style="display: none;">
         <img src="res/conny-dead.png" />
         <div class="text">
-          Du hast es geschafft, du hast Conny für heute besiegt! Komme morgen wieder, um sie erneut herauszufordern.
+          Sie haben es geschafft, Sie haben Conny für heute besiegt! Komme morgen wieder, um die Vire erneut herauszufordern.
         </div>
       </div>
       <div id="alive">
         <div class="text">
-          Hol dir noch mehr Vorschläge um Conny in die Knie zu zwängen!
+          Holen Sie sich noch mehr Vorschläge um Conny in die Knie zu zwängen!
         </div>
         <img src="res/conny.png" />
         <paper-button class="continue-btn" on-click="_backClicked">Weiter gehts!</paper-button>
