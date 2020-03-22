@@ -96,7 +96,7 @@ class TimerScreen extends PolymerElement {
     this.timer.addEventListener("targetAchieved", () => {
       this.set("health", this.health - this.time);
       this.dispatchEvent(new CustomEvent("timer-finished"));
-      if (Notification.permission == "granted") {
+      if (Notification.permission == "granted" && !window.AppGlobals.windowVisible) {
         navigator.serviceWorker.getRegistration().then(reg => {
           var options = {
             icon: "res/conny.png"

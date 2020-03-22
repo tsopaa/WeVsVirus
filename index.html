@@ -6,7 +6,10 @@
     <title>Quarantin0</title>
     <base href="/" />
     <script>
-      window.AppGlobals = { rootPath: "/" };
+      window.AppGlobals = {
+        rootPath: "/" ,
+        windowVisible: true
+      };
     </script>
 
     <link rel="manifest" href="manifest.json" />
@@ -61,6 +64,29 @@
       Notification.requestPermission(function(status) {
     console.log('Notification permission status', status)
       });
+
+      var hidden, visibilityChange; 
+if (typeof document.hidden !== "undefined") { // Opera 12.10 and Firefox 18 and later support 
+  hidden = "hidden";
+  visibilityChange = "visibilitychange";
+} else if (typeof document.msHidden !== "undefined") {
+  hidden = "msHidden";
+  visibilityChange = "msvisibilitychange";
+} else if (typeof document.webkitHidden !== "undefined") {
+  hidden = "webkitHidden";
+  visibilityChange = "webkitvisibilitychange";
+}
+
+function handleVisibilityChange() {
+  console.log("visibility changed");
+  if (document[hidden]) {
+    window.AppGlobals.windowVisible = false;
+  } else {
+    window.AppGlobals.windowVisible = true;
+  }
+}
+
+ document.addEventListener(visibilityChange, handleVisibilityChange, false);
 
       // HACK(keanulee): The Redux package assumes `process` exists - mock it here before
       // the module is loaded.
